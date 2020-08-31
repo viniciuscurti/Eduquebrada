@@ -5,19 +5,17 @@
   <br>
   <div class="row">
     <% @courses.each do |course| %>
-      <% unless course.sold %>
-        <div class="col-6">
+      <div class="col-6">
+        <div>
           <div>
-            <div>
-              <h1><%= course.name %></h1>
-              <p><strong>Category:</strong> <%= course.category %></p>
-              <p><strong>Creator:</strong> <%= course.user.name %></p>
-              <p><strong>Description:</strong> <%= course.description %></p>
-              <p><%= link_to "See course's details", course_path(course), class: "btn btn-primary" %></p>
-            </div>
+            <h1><%= course.name %></h1>
+            <p><strong>Category:</strong> <%= course.category %></p>
+            <p><strong>Creator:</strong> <%= course.user.name %></p>
+            <p><strong>Description:</strong> <%= course.description %></p>
+            <p><%= link_to "See course's details", course_path(course), class: "btn btn-primary" %></p>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
   </div>
   <br>
