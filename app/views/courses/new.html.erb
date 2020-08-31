@@ -1,10 +1,11 @@
 <h1 class="mt-4">New Course</h1>
 <div>
-<%= simple_form_for(@course) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :cateogory %>
-  <%= f.input :description %>
-  <%= f.submit 'Submit', class: 'btn-primary' %>
-<% end %>
+  <%= simple_form_for(@course) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.input :description %>
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+  <% end %>
+</div>
 <br>
 <%= link_to "Back to courses", courses_path, class: "btn btn-primary" %>
