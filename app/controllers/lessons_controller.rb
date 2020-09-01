@@ -3,17 +3,19 @@ class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def show
-    @lessons = Lesson.where(course_id: params[:course_id])
+    @lessons = Lesson.where(course: @lesson.course)
   end
 
   def new
+    @course = Course.find(params[:course_id])
     @lesson = Lesson.new
+    @lesson.course = @course
     authorize @lesson
   end
 
   def create
     @lesson = Lesson.new(lesson_params)
-    @lesson.user = current_user
+    @lesson.course = Course.find(params[:course_id])
     authorize @lesson
     if @lesson.save!
       redirect_to lesson_path(@lesson), notice: 'Sua aula foi criada com sucesso'
@@ -35,7 +37,7 @@ class LessonsController < ApplicationController
 
   def destroy
     @lesson.destroy
-    redirect_to lesson_path(@lesson.course)
+    redirect_to course_path(@lesson.course)
   end
 
   private

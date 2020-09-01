@@ -1,6 +1,6 @@
 <h1 class="mt-4">Crie sua nova aula</h1>
 <div>
-  <%= simple_form_for(@lesson) do |f| %>
+  <%= simple_form_for [@course, @lesson] do |f| %>
     <%= f.input :name %>
     <%= f.input :chapter %>
     <%= f.input :description %>
@@ -9,4 +9,4 @@
   <% end %>
 </div>
 <br>
-<%= link_to "Back to courses", lessons_path, class: "btn btn-primary" %>
+<%= link_to "Back to courses", course_lessons_path, class: "btn btn-primary" %>
