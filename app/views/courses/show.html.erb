@@ -21,12 +21,12 @@
         <% if policy(@course).destroy? %>
           <p><%= link_to "Delete", course_path(@course), method: :delete, class: "btn btn-primary" %></p>
         <% end %>
+        <p><%= link_to "Go to first lesson", course_lesson_path(@lesson), class: "btn btn-primary" %></p>
         <p><%= link_to "Back to courses", courses_path, class: "btn btn-primary" %></p>
       </div>
     <% else %>
-      <p>
-        <%= link_to "Back to courses", courses_path, class: "btn btn-primary" %>
-      </p>
+      <p><%= link_to "Go to first lesson", course_lesson_path(@lesson), class: "btn btn-primary" %></p>
+      <p><%= link_to "Back to courses", courses_path, class: "btn btn-primary" %></p>
     <% end %>
   </div>
 </div>
