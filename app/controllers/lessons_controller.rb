@@ -1,11 +1,14 @@
 class LessonsController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def index
-    @lessons = policy_scope(Lesson).order(created_at: :desc)
+  def show
   end
 
+  private
 
-
+  def set_lesson
+    @lesson = Lesson.find(params[:id])
+    authorize @lesson
+  end
 end
