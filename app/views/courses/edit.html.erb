@@ -1,10 +1,14 @@
 <h1 class="mt-4">Edit course</h1>
 
-<%= simple_form_for(@course) do |f| %>
-<%= f.input :category %>
-<%= f.input :name %>
-<%= f.input :description %>
-<%= f.submit 'Submit', class: 'btn-primary' %>
-<% end %>
-
-<%= link_to "Back to course", course_path(@course), class: "btn btn-primary" %>
+  <% if policy(@course).edit? %>
+    <%= simple_form_for(@course) do |f| %>
+      <%= f.input :category %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.submit 'Submit', class: 'btn-primary' %>
+    <% end %>
+  <div>
+    <%= link_to "Back to course", course_path(@course), class: "btn btn-primary" %>
+    <%= link_to "Update", edit_course_path(@course), class: "btn btn-primary" %>
+  </div>
+  <% end %>
