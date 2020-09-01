@@ -4,15 +4,17 @@
 
 <div>
   <div>
+    <iframe width="560" height="315" src="<%= @course.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div>
     <% if policy(Course).create? %>
-        <%= @course.name %>
-        <%= @course.category %>
-        <%= @course.description %>
+      <%= @course.name %>
+      <%= @course.category %>
+      <%= @course.description %>
+    <% end %>
+  </div>
     <div>
-      <div>
-        <%= link_to "New course", new_course_path %>
-        <%= link_to "Back to all", courses_path, class: "btn btn-primary" %>
-      </div>
+      <%= link_to "New course", new_course_path %>
+      <%= link_to "Back to all", courses_path, class: "btn btn-primary" %>
     </div>
-<% end %>
-
+</div>
