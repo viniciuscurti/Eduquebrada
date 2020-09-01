@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :courses do
-    resources :lessons
-
+    resources :lessons, only: [:new, :create]
   end
+
+  resources :lessons, only: [:show, :edit, :update, :destroy]
 end

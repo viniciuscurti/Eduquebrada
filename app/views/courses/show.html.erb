@@ -16,17 +16,15 @@
 
   <div class="align-self-end mr-3">
     <% if current_user == @course.user %>
-      <div>
-        <p><%= link_to "Edit course", edit_course_path, class: "btn btn-primary" %></p>
-        <% if policy(@course).destroy? %>
-          <p><%= link_to "Delete", course_path(@course), method: :delete, class: "btn btn-primary" %></p>
-        <% end %>
-        <p><%= link_to "Go to first lesson", course_lesson_path(@lesson), class: "btn btn-primary" %></p>
-        <p><%= link_to "Back to courses", courses_path, class: "btn btn-primary" %></p>
-      </div>
-    <% else %>
-      <p><%= link_to "Go to first lesson", course_lesson_path(@lesson), class: "btn btn-primary" %></p>
-      <p><%= link_to "Back to courses", courses_path, class: "btn btn-primary" %></p>
+      <p><%= link_to "Crie uma nova aula", new_course_lesson_path(@course), class: "btn btn-primary" %></p>
+      <p><%= link_to "Edite seu curso", edit_course_path, class: "btn btn-primary" %></p>
+      <% if policy(@course).destroy? %>
+        <p><%= link_to "Apagar curso", course_path(@course), method: :delete, class: "btn btn-primary" %></p>
+      <% end %>
     <% end %>
+    <% unless @lesson == nil %>
+      <p><%= link_to "Vá para sua primeira aula", lesson_path(@lesson), class: "btn btn-primary" %></p>
+    <% end %>
+    <p><%= link_to "Todos os cursos", courses_path, class: "btn btn-primary" %></p>
   </div>
 </div>
