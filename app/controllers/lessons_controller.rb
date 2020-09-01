@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
   def show
   end
 
-  def def new
+  def new
     @lesson = Lesson.new
     authorize @lesson
   end
