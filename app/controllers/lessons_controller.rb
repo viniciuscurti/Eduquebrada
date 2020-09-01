@@ -7,7 +7,7 @@ class LessonsController < ApplicationController
     @lessons = Lesson.where(course_id: params[:course_id])
   end
 
-  def def new
+  def new
     @lesson = Lesson.new
     authorize @lesson
   end
