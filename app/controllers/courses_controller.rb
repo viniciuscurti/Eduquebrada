@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @lesson = @course.lessons.first
   end
 
   def new
