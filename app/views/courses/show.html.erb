@@ -4,10 +4,13 @@
 
 <div>
   <div>
+    <iframe width="560" height="315" src="<%= @course.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div>
     <%= @course.name %>
     <%= @course.category %>
     <%= @course.description %>
-  <div>
+  </div>
   <div>
     <%= link_to "Back to all", courses_path, class: "btn btn-primary" %>
   </div>

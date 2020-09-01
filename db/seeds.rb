@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Course.destroy_all
 Lesson.destroy_all
+Course.destroy_all
 User.destroy_all
 
 
@@ -34,7 +34,7 @@ puts "Start"
       name: Faker::Educator.course_name,
       category: ['Economy', 'Entrepreneur', 'Math'].sample,
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum.',
-      url: ["https://www.youtube.com/watch?v=q9O6bEn0QF0", 'https://www.youtube.com/watch?v=Yy-FJVxR8ZI', 'https://www.youtube.com/watch?v=uPkl-STiZx8', 'https://www.youtube.com/watch?v=c2lgAcfza9Q'].sample,
+      url: ["https://www.youtube.com/embed/q9O6bEn0QF0", 'https://www.youtube.com/embed/Yy-FJVxR8ZI', 'https://www.youtube.com/embed/uPkl-STiZx8', 'https://www.youtube.com/embed/c2lgAcfza9Q'].sample,
       user: user
     )
     course.save!
@@ -43,7 +43,7 @@ puts "Start"
       lesson = Lesson.new(
         name: Faker::Educator.subject,
         chapter: ['Chapter 1', 'Chapter 2', 'Chapter 3'].sample,
-        url: ["https://www.youtube.com/watch?v=q9O6bEn0QF0", 'https://www.youtube.com/watch?v=Yy-FJVxR8ZI', 'https://www.youtube.com/watch?v=uPkl-STiZx8', 'https://www.youtube.com/watch?v=c2lgAcfza9Q'].sample,
+        url: ["https://www.youtube.com/embed/q9O6bEn0QF0", 'https://www.youtube.com/embed/Yy-FJVxR8ZI', 'https://www.youtube.com/embed/uPkl-STiZx8', 'https://www.youtube.com/embed/c2lgAcfza9Q'].sample,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum.',
         course: course
       )
