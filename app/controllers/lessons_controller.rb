@@ -1,5 +1,4 @@
 class LessonsController < ApplicationController
-
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -11,7 +10,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new
     authorize @lesson
   end
-  
+
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.user = current_user
@@ -22,16 +21,21 @@ class LessonsController < ApplicationController
       render :new
     end
   end
-    
+
   def edit
   end
 
   def update
     if @lesson.update(lesson_params)
-      redirect_to lesson_path(@lesson), notice: "Lesson was successfully updated"
+      redirect_to lesson_path(@lesson), notice: "Sua aula foi atualizada com sucesso"
     else
       render :edit
     end
+  end
+
+  def destroy
+    @lesson.destroy
+    redirect_to lesson_path(@lesson.course)
   end
 
   private

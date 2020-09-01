@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @lesson = @course.lessons.first
+    @lesson = Lesson.where(course_id: @course.id).first
   end
 
   def new
