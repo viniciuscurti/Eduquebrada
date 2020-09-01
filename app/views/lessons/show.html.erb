@@ -16,9 +16,9 @@
   <div class="align-self-end mr-3">
     <% if current_user == @lesson.course.user %>
       <div>
-        <p><%= link_to "Edit lesson", edit_lesson_path, class: "btn btn-primary" %></p>
+        <p><%= link_to "Edit lesson", edit_course_lesson_path, class: "btn btn-primary" %></p>
         <% if policy(@lesson).destroy? %>
-          <p><%= link_to "Delete", lesson_path(@lesson), method: :delete, class: "btn btn-primary" %></p>
+          <p><%= link_to "Delete", course_lesson_path(@lesson), method: :delete, class: "btn btn-primary" %></p>
         <% end %>
         <p><%= link_to "Back to Course", course_path(@lesson.course), class: "btn btn-primary" %></p>
       </div>
@@ -28,4 +28,14 @@
       </p>
     <% end %>
   </div>
+</div>
+
+<div>
+  <% @lessons.each do |lesson| %>
+  <div>
+    <p><%= link_to lesson.name, course_lesson_path(lesson) %></p>
+    <p><%= lesson.description %></p>
+    <p><%= lesson.course.name %></p>
+  </div>
+  <% end %>
 </div>
