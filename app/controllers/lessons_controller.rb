@@ -7,7 +7,7 @@ class LessonsController < ApplicationController
     @lessons = Lesson.where(course_id: params[:course_id])
   end
 
-  def def new
+  def new
     @lesson = Lesson.new
     authorize @lesson
   end
@@ -28,7 +28,7 @@ class LessonsController < ApplicationController
 
   def update
     if @lesson.update(lesson_params)
-      redirect_to lesson_path(@lesson), notice: "lesson was successfully updated"
+      redirect_to lesson_path(@lesson), notice: "Lesson was successfully updated"
     else
       render :edit
     end
