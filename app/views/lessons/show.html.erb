@@ -7,7 +7,7 @@
     <iframe width="560" height="315" src="<%= @lesson.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <div>
-    <% if policy(lesson).create? %>
+    <% if policy(@lesson).create? %>
       <%= @lesson.name %>
       <%= @lesson.description %>
     <% end %>
@@ -20,11 +20,11 @@
         <% if policy(@lesson).destroy? %>
           <p><%= link_to "Delete", lesson_path(@lesson), method: :delete, class: "btn btn-primary" %></p>
         <% end %>
-        <p><%= link_to "Back to lessons", lessons_path, class: "btn btn-primary" %></p>
+        <p><%= link_to "Back to Course", course_path(@lesson.course), class: "btn btn-primary" %></p>
       </div>
     <% else %>
       <p>
-        <%= link_to "Back to lessons", lessons_path, class: "btn btn-primary" %>
+        <%= link_to "Back to Course", course_path(@lesson.course), class: "btn btn-primary" %>
       </p>
     <% end %>
   </div>
