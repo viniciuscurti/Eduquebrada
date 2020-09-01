@@ -1,0 +1,28 @@
+<div>
+  <div class="mt-4">
+    <h1>All Lessons</h1>
+  </div>
+  <br>
+  <div class="row">
+    <% if @lessons.present? %>
+      <% @lessons.each do |lesson| %>
+        <div class="col-6">
+          <div>
+            <h1><%= lesson.name %></h1>
+            <p><strong>Chapter:</strong> <%= lesson.chapter %></p>
+            <p><strong>Video:</strong> <%= lesson.user.name %></p>
+            <p><strong>Description:</strong> <%= lesson.description %></p>
+            <p><%= link_to "See Lesson's details", lesson_path(lesson), class: "btn btn-primary" %></p>
+            <% if policy(lesson).destroy? %>
+              <p><%= link_to "Delete", lesson_path(lesson), method: :delete, class: "btn btn-primary" %></p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+    <br>
+    <div>
+      <%= link_to "Create a new lesson", new_lesson_path, class: "btn btn-secondary" %>
+    </div>
+</div>
