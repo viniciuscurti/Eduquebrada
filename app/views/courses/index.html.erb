@@ -13,9 +13,6 @@
             <p><strong>Creator:</strong> <%= course.user.name %></p>
             <p><strong>Description:</strong> <%= course.description %></p>
             <p><%= link_to "See course's details", course_path(course), class: "btn btn-primary" %></p>
-            <% if policy(course).destroy? %>
-              <p><%= link_to "Delete", course_path(course), method: :delete, class: "btn btn-primary" %></p>
-            <% end %>
           </div>
         </div>
       <% end %>
