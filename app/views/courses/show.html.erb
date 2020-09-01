@@ -1,4 +1,4 @@
-<h1>Show_Course</h1>
+<h1><%= @course.name %></h1>
 
 <br>
 
@@ -13,8 +13,20 @@
       <%= @course.description %>
     <% end %>
   </div>
-  <div>
-    <%= link_to "New course", new_course_path %>
-    <%= link_to "Back to all", courses_path, class: "btn btn-primary" %>
+
+  <div class="align-self-end mr-3">
+    <% if current_user == @course.user %>
+      <div>
+        <p><%= link_to "Edit course", edit_course_path, class: "btn btn-primary" %></p>
+        <% if policy(@course).destroy? %>
+          <p><%= link_to "Delete", course_path(@course), method: :delete, class: "btn btn-primary" %></p>
+        <% end %>
+        <p><%= link_to "Back to courses", courses_path, class: "btn btn-primary" %></p>
+      </div>
+    <% else %>
+      <p>
+        <%= link_to "Back to courses", courses_path, class: "btn btn-primary" %>
+      </p>
+    <% end %>
   </div>
 </div>
