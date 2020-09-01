@@ -32,10 +32,10 @@
 
 <div>
   <% @lessons.each do |lesson| %>
-  <div>
-    <p><%= link_to lesson.name, lesson_path(lesson) %></p>
-    <p><%= lesson.description %></p>
-    <p><%= lesson.course.name %></p>
-  </div>
+    <div>
+      <p><%= link_to lesson.name, lesson_path(lesson) %></p>
+      <p><%= lesson.description %></p>
+      <p><%= lesson.course.name %></p>
+    </div>
   <% end %>
 </div>
