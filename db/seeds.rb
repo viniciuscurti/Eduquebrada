@@ -34,6 +34,7 @@ puts "Start"
       name: Faker::Educator.course_name,
       category: ['Economy', 'Entrepreneur', 'Math'].sample,
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum.',
+      url: ["https://www.youtube.com/watch?v=q9O6bEn0QF0", 'https://www.youtube.com/watch?v=Yy-FJVxR8ZI', 'https://www.youtube.com/watch?v=uPkl-STiZx8', 'https://www.youtube.com/watch?v=c2lgAcfza9Q'].sample,
       user: user
     )
     course.save!
