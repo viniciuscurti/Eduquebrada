@@ -22,10 +22,10 @@ class LessonPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.course.user == user || user.admin?
   end
 
   def destroy?
-    record.user == user
+    record.course.user == user || user.admin?
   end
 end
