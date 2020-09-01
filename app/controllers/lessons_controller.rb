@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def show
+    @lessons = Lesson.where(course_id: params[:course_id])
   end
 
   private
