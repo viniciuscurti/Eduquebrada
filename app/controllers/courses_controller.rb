@@ -1,11 +1,11 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: :show
+  before_action :set_course, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index, :show]
- 
+
   def index
     @courses = Course.all
   end
-  
+
   def show
   end
 
@@ -22,8 +22,19 @@ class CoursesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @course.update(course_params)
+      redirect_to course_path(@course), notice: "course was successfully updated"
+    else
+      render :edit
+    end
+  end
+
   private
-  
+
   def set_course
     @course = Course.find(params[:id])
   end
