@@ -1,24 +1,22 @@
 class QuizzesController < ApplicationController
   before_action :set_quiz, only: [:edit, :update, :destroy]
-  before_action :set_course, only: :index
+  before_action :set_course, only: [:index, :new, :create]
 
   def index
     @quizzes = policy_scope(Quiz).where(course: @course).order(created_at: :desc)
   end
 
   def new
-    @course = Course.find(params[:course_id])
     @quiz = Quiz.new
-    @quiz.course = @quiz
     authorize @quiz
   end
 
   def create
     @quiz = Quiz.new(quiz_params)
-    @quiz.course = Course.find(params[:course_id])
+    @quiz.course = @course
     authorize @quiz
     if @quiz.save!
-      redirect_to quiz_path(@quiz), notice: 'Questão criada com sucesso.'
+      redirect_to course_quizzes_path(@quiz.course), notice: 'Questão criada com sucesso.'
     else
       render :new
     end
@@ -29,7 +27,7 @@ class QuizzesController < ApplicationController
 
   def update
     if @quiz.update(quiz_params)
-      redirect_to quiz_path(@quiz), notice: "Sua questão foi atualizada com sucesso"
+      redirect_to course_quizzes_path(@quiz.course), notice: "Sua questão foi atualizada com sucesso"
     else
       render :edit
     end
@@ -37,7 +35,7 @@ class QuizzesController < ApplicationController
 
   def destroy
     @quiz.destroy
-    redirect_to quiz_path(@quiz.course)
+    redirect_to course_quizzes_path(@quiz.course), notice: "Sua questão foi deletada com sucesso"
   end
 
   private

@@ -15,13 +15,15 @@
       </div>
       <div>
         <% if current_user == quiz.course.user %>
-          <p><%= link_to "Crie uma nova questão", new_course_quiz_path(quiz.course), class: "btn btn-primary" %></p>
-          <p><%= link_to "Edite a questão", edit_quiz_path, class: "btn btn-primary" %></p>
+          <p><%= link_to "Edite a questão", edit_quiz_path(quiz), class: "btn btn-primary" %></p>
           <% if policy(quiz).destroy? %>
             <p><%= link_to "Apagar questão", quiz_path(quiz), method: :delete, class: "btn btn-primary" %></p>
           <% end %>
         <% end %>
       </div>
+    <% end %>
+    <% if current_user == @course.user %>
+      <p><%= link_to "Crie uma nova questão", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
     <% end %>
   </div>
 </div>

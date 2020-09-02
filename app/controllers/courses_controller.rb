@@ -40,7 +40,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    render :index
+    redirect_to courses_path, notice: "course was successfully deleted"
   end
 
   private
