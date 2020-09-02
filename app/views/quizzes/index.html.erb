@@ -1,0 +1,29 @@
+<h1><%= @quiz.course.name %></h1>
+
+<br>
+
+<div>
+  <div>
+    <% @quizzes.each do |quiz| %>
+      <div>
+        <div>
+          <p><%= quiz.question %></p>
+        </div>
+        <p><%= quiz.answer_1 %></p>
+        <p><%= quiz.answer_2 %></p>
+        <p><%= quiz.answer_3 %></p>
+        <p><%= quiz.answer_4 %></p>
+        <p><%= quiz.right_answer %></p>
+      </div>
+      <div>
+        <% if current_user == quiz.course.user %>
+          <p><%= link_to "Crie uma nova questão", new_course_quiz_path(quiz.course), class: "btn btn-primary" %></p>
+          <p><%= link_to "Edite a questão", edit_quiz_path, class: "btn btn-primary" %></p>
+          <% if policy(quiz).destroy? %>
+            <p><%= link_to "Apagar questã0", quiz_path(quiz), method: :delete, class: "btn btn-primary" %></p>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
