@@ -1,6 +1,6 @@
 <div>
   <div class="mt-4">
-    <h1>All courses</h1>
+    <h1>Relação de Cursos Disponíveis</h1>
   </div>
   <br>
   <div class="row">
@@ -12,7 +12,7 @@
             <p><strong>Category:</strong> <%= course.category %></p>
             <p><strong>Creator:</strong> <%= course.user.name %></p>
             <p><strong>Description:</strong> <%= course.description %></p>
-            <p><%= link_to "See course's details", course_path(course), class: "btn btn-primary" %></p>
+            <p><%= link_to "Cursos Detalhados", course_path(course), class: "btn btn-primary" %></p>
           </div>
         </div>
       <% end %>
@@ -20,6 +20,6 @@
     </div>
     <br>
     <div>
-      <%= link_to "Create a new course", new_course_path, class: "btn btn-secondary" %>
+      <%= link_to "Crie um novo curso", new_course_path, class: "btn btn-secondary" %>
     </div>
 </div>

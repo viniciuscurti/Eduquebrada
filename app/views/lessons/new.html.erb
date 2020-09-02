@@ -1,12 +1,19 @@
-<h1 class="mt-4">Crie sua nova aula</h1>
+<h1 class="mt-4">Criar Nova Aula</h1>
+
+<br>
+
 <div>
   <%= simple_form_for [@course, @lesson] do |f| %>
     <%= f.input :name %>
     <%= f.input :chapter %>
     <%= f.input :description %>
     <%= f.input :url %>
-    <%= f.submit 'Submit', class: 'btn-primary' %>
+    <%= f.submit 'Criar', class: 'btn-primary' %>
   <% end %>
 </div>
+
 <br>
-<%= link_to "Back to courses", course_lessons_path, class: "btn btn-primary" %>
+
+<div>
+  <%= link_to "Retorne para o curso", course_lessons_path, class: "btn btn-primary" %>
+</div>
