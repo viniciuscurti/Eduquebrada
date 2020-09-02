@@ -9,11 +9,11 @@
         <div>
           <p><%= quiz.question %></p>
         </div>
-        <p><%= quiz.answer_1 %></p>
-        <p><%= quiz.answer_2 %></p>
-        <p><%= quiz.answer_3 %></p>
-        <p><%= quiz.answer_4 %></p>
-        <p><%= quiz.right_answer %></p>
+        <% [[ %><p><%= quiz.answer_1 %></p><% ] %>
+        <% [ %><p><%= quiz.answer_2 %></p><% ] %>
+        <% [ %><p><%= quiz.answer_3 %></p><% ] %>
+        <% [ %><p><%= quiz.answer_4 %></p><% ] %>
+        <% [ %><p><%= quiz.right_answer %></p><% ]].shuffle! %>
       </div>
       <div>
         <% if current_user == quiz.course.user %>
