@@ -1,0 +1,23 @@
+<h1 class="mt-4">Editar Questão</h1>
+
+<br>
+
+<div>
+  <% if policy(@quiz).edit? %>
+    <%= simple_form_for(@quiz) do |f| %>
+    <%= f.input :question %>
+    <%= f.input :answer_1 %>
+    <%= f.input :answer_2 %>
+    <%= f.input :answer_3 %>
+    <%= f.input :answer_4 %>
+    <%= f.input :answer_5 %>
+    <%= f.submit 'Atualizar', class: 'btn-primary' %>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+
+<div>
+  <% link_to "Questionário", quiz_path(@quiz), class: "btn btn-primary" %>
+</div>

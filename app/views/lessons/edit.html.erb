@@ -1,14 +1,21 @@
-<h1 class="mt-4">Edit Lesson</h1>
+<h1 class="mt-4">Editar Lição</h1>
 
-<% if policy(@lesson).edit? %>
-  <%= simple_form_for(@lesson) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :chapter %>
-    <%= f.input :description %>
-    <%= f.input :url %>
-    <%= f.submit 'Update Course', class: 'btn-primary' %>
-  <% end %>
-<% end %>
+<br>
+
 <div>
-  <%= link_to "Back to course", course_path(@lesson.course), class: "btn btn-primary" %>
+  <% if policy(@lesson).edit? %>
+    <%= simple_form_for(@lesson) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :chapter %>
+      <%= f.input :description %>
+      <%= f.input :url %>
+      <%= f.submit 'Atualização', class: 'btn-primary' %>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+
+<div>
+  <%= link_to "Retorne para o curso", course_path(@lesson.course), class: "btn btn-primary" %>
 </div>

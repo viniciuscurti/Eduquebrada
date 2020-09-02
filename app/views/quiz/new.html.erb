@@ -1,0 +1,22 @@
+<h1 class="mt-4">Criar Questão</h1>
+
+<br>
+
+<div>
+  <%= simple_form_for [@course, @quiz] do |f| %>
+    <%= f.input :question %>
+    <%= f.input :answer_1 %>
+    <%= f.input :answer_2 %>
+    <%= f.input :answer_3 %>
+    <%= f.input :answer_4 %>
+    <%= f.input :answer_5 %>
+    <%= f.submit 'Criar', class: 'btn-primary' %>
+  <% end %>
+</div>
+
+<br>
+
+<div>
+  <%# link_to "Questionário", quiz_path, class: "btn btn-primary" %>
+</div>
+ 
