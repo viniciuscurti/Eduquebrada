@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resources :lessons, only: [:new, :create]
   end
 
-  resources :lessons, only: [:show, :edit, :update, :destroy]
+  resources :lessons, only: [:show, :edit, :update, :destroy] do
+    resources :quizzes, only: :show
+  end
 end
