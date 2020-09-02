@@ -10,6 +10,7 @@
 Lesson.destroy_all
 Course.destroy_all
 User.destroy_all
+Quiz.destroy_all
 
 
 puts "Start"
@@ -38,6 +39,17 @@ puts "Start"
       user: user
     )
     course.save!
+
+    quiz = Quiz.new(
+      question: Faker::Lorem.question(word_count: 4),
+      answer_1: Faker::Lorem.sentence(word_count: 3),
+      answer_2: Faker::Lorem.sentence(word_count: 3),
+      answer_3: Faker::Lorem.sentence(word_count: 3),
+      answer_4: Faker::Lorem.sentence(word_count: 3),
+      answer_5: Faker::Cannabis.brand,
+      course: course
+      )
+    quiz.save!
 
     6.times do
       lesson = Lesson.new(

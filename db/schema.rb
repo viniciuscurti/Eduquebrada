@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_135518) do
+ActiveRecord::Schema.define(version: 2020_09_02_173226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,10 +63,10 @@ ActiveRecord::Schema.define(version: 2020_09_01_135518) do
     t.string "answer_2"
     t.string "answer_3"
     t.string "answer_4"
-    t.string "right_answer"
     t.bigint "course_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "answer_5"
     t.index ["course_id"], name: "index_quizzes_on_course_id"
   end
 
