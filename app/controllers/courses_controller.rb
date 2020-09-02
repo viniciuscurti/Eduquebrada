@@ -8,6 +8,7 @@ class CoursesController < ApplicationController
 
   def show
     @lesson = Lesson.where(course_id: @course.id).first
+    @quizzes = Quiz.where(course_id: @course.id)
   end
 
   def new
@@ -39,7 +40,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    render :index
+    redirect_to courses_path, notice: "course was successfully deleted"
   end
 
   private

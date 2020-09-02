@@ -1,0 +1,24 @@
+<h1 class="mt-4">Editar Questão</h1>
+
+<br>
+<div>
+  <div>
+    <% if policy(@quiz).edit? %>
+      <%= simple_form_for(@quiz) do |f| %>
+      <%= f.input :question %>
+      <%= f.input :answer_1 %>
+      <%= f.input :answer_2 %>
+      <%= f.input :answer_3 %>
+      <%= f.input :answer_4 %>
+      <%= f.input :answer_5 %>
+      <%= f.submit 'Atualizar', class: 'btn-primary' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= link_to "Voltar para Teste", course_quizzes_path(@quiz.course), class: "btn btn-primary" %>
+  </div>
+</div>
