@@ -46,7 +46,7 @@ puts "Start"
       answer_2: Faker::Lorem.sentence(word_count: 3),
       answer_3: Faker::Lorem.sentence(word_count: 3),
       answer_4: Faker::Lorem.sentence(word_count: 3),
-      right_answer: Faker::Cannabis.brand,
+      answer_5: Faker::Cannabis.brand,
       course: course
       )
     quiz.save!
