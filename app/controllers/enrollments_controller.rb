@@ -1,12 +1,12 @@
 class EnrollmentsController < ApplicationController
   def submit
-    send_data(generate_pdf, :filename => "DaUmaMAMADA.pdf", :type => "application/pdf") 
+    send_data(generate_pdf, :filename => "certificado.pdf", :type => "application/pdf")
   end
-  
-  private 
+
+  private
+
   def generate_pdf
-      Prawn::Document.new do
-        text "MAMA EU QUE O PAI BOTO O PDF PRA BAIXAR"
-      end.render 
+    Prawn::Document.new do
+    end.render
   end
 end
