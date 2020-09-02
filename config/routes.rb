@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :lessons, only: [:show, :edit, :update, :destroy] do
     resources :quizzes, only: :show
   end
+
+  get "downloadpdf", to: "enrollments#submit"
 end
