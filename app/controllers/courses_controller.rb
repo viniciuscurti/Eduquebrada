@@ -8,6 +8,7 @@ class CoursesController < ApplicationController
 
   def show
     @lesson = Lesson.where(course_id: @course.id).first
+    @quizzes = Quiz.where(course_id: @course.id)
   end
 
   def new
