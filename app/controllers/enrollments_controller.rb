@@ -6,6 +6,7 @@ class EnrollmentsController < ApplicationController
   private 
   def generate_pdf
       Prawn::Document.new do
+        
       end.render 
   end
 end
