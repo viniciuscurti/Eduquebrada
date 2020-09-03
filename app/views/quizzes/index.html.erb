@@ -5,25 +5,35 @@
 <div>
   <div>
     <% @quizzes.each do |quiz| %>
-      <div>
-        <div>
-          <p><%= quiz.question %></p>
-        </div>
-        <% (1..5).to_a.shuffle.each do |n| %>
-          <p><%= quiz.send("answer_#{n}") %></p>
-        <% end %>
-      </div>
-      <div>
-        <% if current_user == quiz.course.user %>
-          <p><%= link_to "Edite a questão", edit_quiz_path(quiz), class: "btn btn-primary" %></p>
-          <% if policy(quiz).destroy? %>
-            <p><%= link_to "Apagar questão", quiz_path(quiz), method: :delete, class: "btn btn-primary" %></p>
+    <div>
+          <div>
+            <p><%= quiz.question %></p>
+          </div>
+          <% (1..5).to_a.shuffle.each do |n| %>
+            <p><%= quiz.send("answer_#{n}") %></p>
           <% end %>
-        <% end %>
-      </div>
-    <% end %>
+        </div>
+        <div>
+          <% if current_user == quiz.course.user %>
+            <p><%= link_to "Edite a questão", edit_quiz_path(quiz), class: "btn btn-primary" %></p>
+            <% if policy(quiz).destroy? %>
+              <p><%= link_to "Apagar questão", quiz_path(quiz), method: :delete, class: "btn btn-primary" %></p>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     <% if current_user == @course.user %>
       <p><%= link_to "Crie uma nova questão", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
     <% end %>
   </div>
 </div>
+
+
+<%= simple_form_for :quiz, url: "" do |f| %>
+  <% @quizzes.each do |quiz| %>
+    <%= f.input :"question[#{quiz.id}]", label: quiz.question, as: :radio_buttons, collection: (1..5).to_a.shuffle.map { |n| [quiz.send("answer_#{n}"), n] } %>
+  <%end%>
+  <%= f.submit %>
+<% end %>
+
+<%# params.require(:quiz).require(:question) %>
