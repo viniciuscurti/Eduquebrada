@@ -39,8 +39,15 @@ class QuizzesController < ApplicationController
   end
 
   # def quiz_correct
-  #   @course.quizzes.each do |quiz|
+  #   answers = params.require(:quiz).require(:question) #Uma hash com todas as respostas {"19"=>"3", "18"=>"5"}
+  #   answers.each do |quiz, value|
+  #     quiz_answer = Answer.new(quiz_id: quiz.to_sym, enrollment_id: )  
+  #     answer = "answer_#{value}".to_sym
       
+  #     if answer_1 == answer
+  #       quiz_answer.correct = true
+  #     end
+  #     quiz_answer.save!
   #   end
   # end
 
