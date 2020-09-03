@@ -32,7 +32,7 @@
     <% end %>
     <% if @enrollment.empty? %>
       <% if policy(@course).create? %>
-        <p><%= link_to "Inscreva-se", course_enrollments_path(@course), class: "btn btn-primary" %></p>
+        <p><%= link_to "Inscreva-se", new_course_enrollment_path(@course), class: "btn btn-primary" %></p>
       <% end %>
     <% end %>
     <p><%= link_to "Todos os cursos", courses_path, class: "btn btn-primary" %></p>
