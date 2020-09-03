@@ -32,7 +32,11 @@
     <% end %>
     <% if @enrollment.empty? %>
       <% if policy(@course).create? %>
-        <p><%= link_to "Inscreva-se", new_course_enrollment_path(@course), class: "btn btn-primary" %></p>
+        <p>
+          <%= simple_form_for [@course, Enrollment.new] do |f| %>
+          <%= f.button :submit, "Inscreva-se", class: 'btn-primary' %>
+          <% end %>
+        </p>
       <% end %>
     <% end %>
     <p><%= link_to "Todos os cursos", courses_path, class: "btn btn-primary" %></p>
