@@ -1,0 +1,18 @@
+.banner{
+  // box-shadow: 0px 0px 60px 40px rgb(141, 24, 24) inset;
+  box-shadow: 0px 0px -60px -40px black inset;
+  width: 100vw;
+  height: 75vh;
+  position: center;
+  display: block;
+  opacity: 1;
+  // transition: opacity 0.2s ease-in-out 0s;
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+  h1{
+    color: #ededee;
+    position: relative;
+  }
+}
