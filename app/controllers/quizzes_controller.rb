@@ -1,6 +1,6 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: [:edit, :update, :destroy]
-  before_action :set_course, only: [:index, :new, :create]
+  before_action :set_quiz, only: [:edit, :update, :destroy, :answer]
+  before_action :set_course, only: [:index, :new, :create, :answer]
 
   def index
     @quizzes = policy_scope(Quiz).where(course: @course).order(created_at: :desc)
@@ -37,6 +37,12 @@ class QuizzesController < ApplicationController
     @quiz.destroy
     redirect_to course_quizzes_path(@quiz.course), notice: "Sua questão foi deletada com sucesso"
   end
+
+  # def quiz_correct
+  #   @course.quizzes.each do |quiz|
+      
+  #   end
+  # end
 
   private
 
