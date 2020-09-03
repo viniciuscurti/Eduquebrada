@@ -12,7 +12,6 @@ class QuizzesController < ApplicationController
   end
 
   def create
-    raise
     @quiz = Quiz.new(quiz_params)
     @quiz.course = @course
     authorize @quiz
