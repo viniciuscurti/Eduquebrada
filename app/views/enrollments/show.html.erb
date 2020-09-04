@@ -1,4 +1,4 @@
-<div>
+<div class="container" style="margin-top: 10%;">
   <% if @enrollment.completed %>
     <h1>Parabéns! Você foi aprovado na prova do <%= @enrollment.course.name %>!</h1>
     <p>Acesse seu certificado clicando <%= link_to "aqui", downloadpdf_path %></p>
