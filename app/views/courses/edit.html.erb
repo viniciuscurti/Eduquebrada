@@ -1,21 +1,25 @@
-<h1 class="mt-4">Editar Curso</h1>
+<div class="container">
 
-<br>
+  <h1 class="mt-4">Editar Curso</h1>
 
-<div>
-  <% if policy(@course).edit? %>
-    <%= simple_form_for(@course) do |f| %>
-      <%= f.input :category %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :url %>
-      <%= f.submit 'Atualização', class: 'btn-primary' %>
+  <br>
+
+  <div>
+    <% if policy(@course).edit? %>
+      <%= simple_form_for(@course) do |f| %>
+        <%= f.input :category %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :url %>
+        <%= f.submit 'Atualização', class: 'btn-primary' %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Retornar aos cursos", course_path(@course), class: "btn btn-primary" %>
+  <div>
+    <%= link_to "Retornar aos cursos", course_path(@course), class: "btn btn-primary" %>
+  </div>
+
 </div>
