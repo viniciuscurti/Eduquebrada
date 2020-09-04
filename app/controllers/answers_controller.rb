@@ -9,7 +9,6 @@ class AnswersController < ApplicationController
       )
       authorize quiz_answer
       quiz_answer.save!
-
       redirect_to enrollment_path(enrollment)
     end
   end

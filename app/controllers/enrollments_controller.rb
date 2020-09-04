@@ -1,6 +1,11 @@
 class EnrollmentsController < ApplicationController
   before_action :set_course, only: [:new, :create]
 
+  def show
+    @enrollment = Enrollment.find(params[:id])
+    @enrollment.approved
+  end
+
   def new
     @enrollment = Enrollment.new
     @enrollment.course = @course
