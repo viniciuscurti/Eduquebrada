@@ -7,12 +7,12 @@
  */
 
  #menu-toggle{
-  color:white;
+  color: #001233;
   position: absolute;
   top: 46px;
   left: -45.75px;
   transform: rotate(90deg);
-  background: black;
+  background: #5C677D;
   }
   
   
@@ -31,24 +31,15 @@
   
   
   #sidebar-wrapper {
-    
-    
-          position: fixed;
-    
-                      left: 250px;
-    
-                      width: 250px;
-    
-                      height: 86.5%;
-    
-                      margin-left: -250px;
-    
-                      overflow-y: scroll;
-  
-            overflow-x: hidden;
-                      background: #000;
-    
-          -webkit-transition: all 0.5s ease;
+    position: fixed;
+    left: 250px;
+    width: 250px;
+    height: 86.5%;
+    margin-left: -250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #001233;
+    -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
