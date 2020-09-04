@@ -1,8 +1,12 @@
-<div>
+<div class="container">
   <div class="mt-4">
-    <h1>Relação de Cursos Disponíveis</h1>
+    <div class="d-flex justify-content-center">
+      <h1>Relação de Cursos Disponíveis</h1>
+    </div>  
   </div>
+  
   <br>
+
   <div class="row">
     <% if @courses.present? %>
       <% @courses.each do |course| %>
@@ -17,9 +21,14 @@
         </div>
       <% end %>
     <% end %>
-    </div>
-    <br>
-    <div>
-      <%= link_to "Crie um novo curso", new_course_path, class: "btn btn-secondary" %>
-    </div>
+  </div>
+
+  <br>
+
+  <div> 
+    <%= link_to "Crie um novo curso", new_course_path, class: "btn btn-secondary" %>
+  </div>
+    
+  <br>
+
 </div>
