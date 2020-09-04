@@ -13,11 +13,11 @@
             <p><%= link_to "Apagar questão", quiz_path(quiz), method: :delete, class: "btn btn-primary" %></p>
           <% end %>
         <% end %>
-      </div> 
-    <%end%>
+      </div>
+    <% end %>
     <%# unless current_user == @course.user %>
       <%= f.submit %>
-    <%# end %> 
+    <%# end %>
   <% end %>
   <div>
     <% if current_user == @course.user %>

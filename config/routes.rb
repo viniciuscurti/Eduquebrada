@@ -9,10 +9,11 @@ Rails.application.routes.draw do
     resources :enrollments, only: [:new, :create]
   end
 
+  resources :enrollments, only: :show
   resources :lessons, only: [:show, :edit, :update, :destroy]
   resources :quizzes, only: [:edit, :update, :destroy]
   resources :answers, only: [:create]
-  
+
   get "downloadpdf", to: "enrollments#submit"
 end
 
