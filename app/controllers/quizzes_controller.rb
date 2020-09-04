@@ -1,6 +1,6 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: [:edit, :update, :destroy]
-  before_action :set_course, only: [:index, :new, :create]
+  before_action :set_quiz, only: [:edit, :update, :destroy, :answer]
+  before_action :set_course, only: [:index, :new, :create, :answer]
 
   def index
     @quizzes = policy_scope(Quiz).where(course: @course).order(created_at: :desc)
@@ -37,6 +37,19 @@ class QuizzesController < ApplicationController
     @quiz.destroy
     redirect_to course_quizzes_path(@quiz.course), notice: "Sua questão foi deletada com sucesso"
   end
+
+  # def quiz_correct
+  #   answers = params.require(:quiz).require(:question) #Uma hash com todas as respostas {"19"=>"3", "18"=>"5"}
+  #   answers.each do |quiz, value|
+  #     quiz_answer = Answer.new(quiz_id: quiz.to_sym, enrollment_id: )  
+  #     answer = "answer_#{value}".to_sym
+      
+  #     if answer_1 == answer
+  #       quiz_answer.correct = true
+  #     end
+  #     quiz_answer.save!
+  #   end
+  # end
 
   private
 
