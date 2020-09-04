@@ -9,7 +9,7 @@ class CoursesController < ApplicationController
   def show
     @lesson = Lesson.where(course_id: @course.id).first
     @quizzes = Quiz.where(course_id: @course.id)
-    @enrollment = Enrollment.where(course_id: @course.id)
+    @enrollment = Enrollment.find_by(course_id: @course.id, user: current_user)
   end
 
   def new
@@ -22,7 +22,7 @@ class CoursesController < ApplicationController
     @course.user = current_user
     authorize @course
     if @course.save!
-      redirect_to course_path(@course), notice: 'Course has been successfully created'
+      redirect_to course_path(@course), notice: 'Curso criado com sucesso'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update(course_params)
-      redirect_to course_path(@course), notice: "course was successfully updated"
+      redirect_to course_path(@course), notice: "Curso atualizado com sucesso"
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    redirect_to courses_path, notice: "course was successfully deleted"
+    redirect_to courses_path, notice: "Curso deletado com sucesso"
   end
 
   private
