@@ -15,7 +15,9 @@
         <% end %>
       </div>
     <% end %>
-    <%= f.submit "Enviar", class: "btn btn-primary"%>
+    <% unless current_user == @course.user %>
+      <%= f.submit "Enviar", class: "btn btn-primary"%>
+    <% end %>
   <% end %>
   <div>
     <% if current_user == @course.user %>

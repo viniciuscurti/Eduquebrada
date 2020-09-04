@@ -36,6 +36,7 @@ class EnrollmentsController < ApplicationController
 
   def generate_pdf
     Prawn::Document.new do
+      text "PARABÉNS! AQUI ESTÁ SEU CERTIFICADO DE OTÁRIO! UHULL"
     end.render
   end
 end
