@@ -3,16 +3,9 @@
 <br>
 
 <div>
-  <div>
+  <%= simple_form_for :quiz, url: answers_path do |f| %>
     <% @quizzes.each do |quiz| %>
-      <div>
-        <div>
-          <p><%= quiz.question %></p>
-        </div>
-        <% (1..5).to_a.shuffle.each do |n| %>
-          <p><%= quiz.send("answer_#{n}") %></p>
-        <% end %>
-      </div>
+      <%= f.input :"question[#{quiz.id}]", label: quiz.question, as: :radio_buttons, collection: (1..5).to_a.shuffle.map { |n| [quiz.send("answer_#{n}"), n] } %>
       <div>
         <% if current_user == quiz.course.user %>
           <p><%= link_to "Edite a questão", edit_quiz_path(quiz), class: "btn btn-primary" %></p>
@@ -20,8 +13,13 @@
             <p><%= link_to "Apagar questão", quiz_path(quiz), method: :delete, class: "btn btn-primary" %></p>
           <% end %>
         <% end %>
-      </div>
-    <% end %>
+      </div> 
+    <%end%>
+    <%# unless current_user == @course.user %>
+      <%= f.submit %>
+    <%# end %> 
+  <% end %>
+  <div>
     <% if current_user == @course.user %>
       <p><%= link_to "Crie uma nova questão", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
     <% end %>

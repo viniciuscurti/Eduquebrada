@@ -26,8 +26,18 @@
     <% unless @lesson == nil %>
       <p><%= link_to "Vá para sua primeira aula", lesson_path(@lesson), class: "btn btn-primary" %></p>
     <% end %>
+    <%  %>
     <% unless @quizzes.empty? %>
       <p><%= link_to "Prova", course_quizzes_path(@course), class: "btn btn-primary" %></p>
+    <% end %>
+    <% if @enrollment.empty? %>
+      <% if policy(@course).create? %>
+        <p>
+          <%= simple_form_for [@course, Enrollment.new] do |f| %>
+          <%= f.button :submit, "Inscreva-se", class: 'btn-primary' %>
+          <% end %>
+        </p>
+      <% end %>
     <% end %>
     <p><%= link_to "Todos os cursos", courses_path, class: "btn btn-primary" %></p>
   </div>
