@@ -3,28 +3,25 @@
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
-            <a href="#">Start Bootstrap</a>
+          <%= link_to "EduQuebrada", root_path, class: "nav-link" %>
         </li>
         <li>
-            <a href="#">Dashboard</a>
+          <%= link_to "Cursos", courses_path, class: "nav-link" %> 
         </li>
         <li>
-            <a href="#">Shortcuts</a>
+          <%= link_to "Categorias", "root_path", class: "nav-link" %> 
         </li>
         <li>
-            <a href="#">Overview</a>
+          <%= link_to "Seja um professor", new_course_path, class: "nav-link" %>
         </li>
         <li>
-            <a href="#">Events</a>
+          <%= link_to "Eventos", "root_path", class: "nav-link" %>
         </li>
         <li>
-            <a href="#">About</a>
+          <%= link_to "Conheça o EduQuebrada", "root_path", class: "nav-link" %>
         </li>
         <li>
-            <a href="#">Services</a>
-        </li>
-        <li>
-            <a href="#">Contact</a>
+          <%= link_to "Fale conosco", "root_path", class: "nav-link" %>
         </li>
       </ul>
     </div>
