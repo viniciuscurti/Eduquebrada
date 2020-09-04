@@ -1,6 +1,11 @@
 class EnrollmentsController < ApplicationController
   before_action :set_course, only: [:new, :create]
 
+  def show
+    @enrollment = Enrollment.find(params[:id])
+    @enrollment.approved
+  end
+
   def new
     @enrollment = Enrollment.new
     @enrollment.course = @course
@@ -31,6 +36,7 @@ class EnrollmentsController < ApplicationController
 
   def generate_pdf
     Prawn::Document.new do
+      text "PARABÉNS! AQUI ESTÁ SEU CERTIFICADO DE OTÁRIO! UHULL"
     end.render
   end
 end

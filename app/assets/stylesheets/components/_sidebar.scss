@@ -6,14 +6,19 @@
 (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
 
- #menu-toggle{
+  #menu-toggle{
   color: #001233;
-  position: absolute;
-  top: 46px;
-  left: -45.75px;
+  position: fixed;
+  top: 117px;
+  left: 216.25px;
   transform: rotate(90deg);
   background: #5C677D;
   z-index: 2;
+  transition: all 0.5s ease;
+  &.toggled {
+    top: 117px;
+    left: -33.75px;
+    }
   }
   
   
@@ -37,6 +42,7 @@
     width: 250px;
     height: 100%;
     margin-left: -250px;
+    margin-top: 82px;
     // overflow-y: scroll;
     overflow-x: hidden;
     background: #001233;
