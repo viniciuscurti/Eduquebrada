@@ -6,7 +6,7 @@
 (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
 
-  #menu-toggle{
+ #menu-toggle{
   color: #001233;
   position: fixed;
   top: 117px;
@@ -21,8 +21,6 @@
     }
   }
 
-
-
   #wrapper {
     padding-left: 250px;
     -webkit-transition: all 0.5s ease;
@@ -36,13 +34,13 @@
   }
 
 
-  #sidebar-wrapper {
+  #sidebar-wrappers {
     position: fixed;
     left: 250px;
     width: 250px;
     height: 100%;
     margin-left: -250px;
-    margin-top: 82px;
+    margin-top: 34px;
     // overflow-y: scroll;
     overflow-x: hidden;
     background: #001233;
@@ -54,19 +52,19 @@
   }
 
 
-  #wrapper.toggled #sidebar-wrapper {
+  #wrapper.toggled #sidebar-wrappers {
     width: 0px;
   }
 
 
-  #page-content-wrapper {
+  #page-content-wrappers {
     width: auto;
     position: absolute;
     padding: 50px;
   }
 
 
-  #wrapper.toggled #page-content-wrapper {
+  #wrapper.toggled #page-content-wrappers {
     position: absolute;
     margin-right: -250px;
     width:100%;
@@ -76,7 +74,7 @@
   /* Sidebar Styles */
 
 
-  .sidebar-nav {
+  .sidebar-navs {
     position: absolute;
     top: 0;
     width: 250px;

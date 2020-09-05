@@ -9,20 +9,22 @@ p{
   margin-top: 10px;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  height: 200px;
-  width: 700px;
-}
+// .card {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+// }
 
-.cards-category{
-  object-fit: cover;
-  object-position: center;
-  text-align: center;
-  color: #979DAC;
-}
+// .card-img-top{
+//   width: 350px;
+// }
+
+// .card-category{
+//   object-fit: cover;
+//   object-position: center;
+//   text-align: center;
+//   color: #979DAC;
+// }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
