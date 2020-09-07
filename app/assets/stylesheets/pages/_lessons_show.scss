@@ -1,6 +1,5 @@
 #comments {
-  max-height: 200px;
-  border: 2px solid lightblue;
+  max-height: 700px;
   border-radius: 2px;
   overflow: scroll;
   padding: 0.375rem 0.75rem;
@@ -19,4 +18,14 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 16px;
+}
+
+.lessons-index {
+  max-height: 500px;
+  border: 2px solid #ced4da;
+  border-radius: 2px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
