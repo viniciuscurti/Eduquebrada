@@ -5,31 +5,26 @@
       <h1 class="mt-5">Relação de Cursos Disponíveis</h1>
     </div>
   </div>
-
   <br>
-
-  <div class="row">
-    <% if @courses.present? %>
-      <% @courses.each do |course| %>
-        <div class="col-6">
-          <div>
-            <h1><%= course.name %></h1>
-            <p><strong>Category:</strong> <%= course.category %></p>
-            <p><strong>Creator:</strong> <%= course.user.name %></p>
-            <p><strong>Description:</strong> <%= course.description %></p>
-            <p><%= link_to "Cursos Detalhados", course_path(course), class: "btn btn-primary" %></p>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
-  <br>
-
+  <%= render 'shared/filterbar' %>
   <div>
     <%= link_to "Crie um novo curso", new_course_path, class: "btn btn-secondary" %>
   </div>
-
   <br>
-
+  <div>
+    <% if @courses.present? %>
+      <% @courses.each do |course| %>
+          <div class="card-products">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-products-infos">
+              <h2><%= course.name %></h2>
+              <p><strong>Categoria:</strong> <%= course.category %></p>
+              <p><strong>Professor:</strong> <%= course.user.name %></p>
+              <p><strong>Descrição:</strong> <%= course.description %></p>
+              <p><%= link_to "Detalhes", course_path(course), class: "btn btn-primary" %></p>
+            </div>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
