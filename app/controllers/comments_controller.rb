@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.lesson = @lesson
     @comment.user = current_user
+    authorize @comment
     if @comment.save
       redirect_to lesson_path(@lesson)
     else
