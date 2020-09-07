@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
   def create
+    enrollment = Enrollment.find_by(course_id: params[:quiz][:course_id].to_i, user: current_user)
     params[:quiz][:question].each do |quiz, value|
-      enrollment = Enrollment.find_by(course: Quiz.find(quiz.to_i).course, user: current_user)
       quiz_answer = Answer.new(
         quiz_id: quiz.to_i,
         enrollment: enrollment,
@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
       )
       authorize quiz_answer
       quiz_answer.save!
-      redirect_to enrollment_path(enrollment)
     end
+    redirect_to enrollment_path(enrollment)
   end
 end
