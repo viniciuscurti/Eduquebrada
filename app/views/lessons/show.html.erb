@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="mt-4 mx-4">
   <div class="pt-5">
     <div class="d-flex justify-content-center">
       <h1><%= @lesson.name %></h1>
@@ -19,6 +19,8 @@
         <% end %>
       </div>
 
+      <br>
+
       <div class="align-self-end mr-3 d-flex">
         <% if current_user == @lesson.course.user %>
           <div class="justify-content-between">
@@ -30,15 +32,6 @@
           </div>
         <% else %>
             <%= link_to "Back to Course", course_path(@lesson.course), class: "btn btn-primary" %>
-        <% end %>
-      </div>
-
-      <br>
-
-      <div>
-        <%= simple_form_for([ @lesson, @comment ], remote: true) do |f| %>
-          <%= f.input :content, as: :text, label: "Teve alguma dúvida sobre o conteúdo da aula? Deixe aqui sua dúvida:" %>
-          <%= f.button :submit, class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
@@ -53,10 +46,18 @@
           </details>
         <% end %>
       </div>
+      <br>
       <div>
-        <h2>
+        <%= simple_form_for([ @lesson, @comment ], remote: true) do |f| %>
+          <%= f.input :content, as: :text, placeholder: "Teve alguma dúvida sobre o conteúdo da aula? Deixe aqui sua dúvida!", label: false %>
+          <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <br>
+      <div>
+        <h4>
           <%= pluralize @lesson.comments.size, "comment" %>
-        </h2>
+        </h4>
         <div id="comments">
           <% if @lesson.comments.blank? %>
             Be the first to leave a comment for <%= @lesson.name %>
