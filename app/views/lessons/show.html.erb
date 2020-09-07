@@ -32,6 +32,27 @@
   </div>
 
   <div>
+    <h2>
+      <%= pluralize @lesson.comments.size, "comment" %>
+    </h2>
+    <div id="comments">
+      <% if @lesson.comments.blank? %>
+        Be the first to leave a comment for <%= @lesson.name %>
+      <% else %>
+        <% @lesson.comments.each do |comment| %>
+          <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+        <% end %>
+      <% end %>
+    </div>
+    <div>
+      <%= simple_form_for([ @lesson, @comment ]) do |f| %>
+        <%= f.input :content, as: :text %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+
+  <div>
     <% @lessons.each do |lesson| %>
       <div>
         <p><%= link_to lesson.name, lesson_path(lesson) %></p>

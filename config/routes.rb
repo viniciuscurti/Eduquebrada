@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   end
 
   resources :enrollments, only: :show
-  resources :lessons, only: [:show, :edit, :update, :destroy]
+  resources :lessons, only: [:show, :edit, :update, :destroy] do
+    resources :comments, only: :create
+  end
   resources :quizzes, only: [:edit, :update, :destroy]
   resources :answers, only: [:create]
 
