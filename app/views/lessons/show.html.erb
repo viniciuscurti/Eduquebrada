@@ -45,7 +45,7 @@
       <% end %>
     </div>
     <div>
-      <%= simple_form_for([ @lesson, @comment ]) do |f| %>
+      <%= simple_form_for([ @lesson, @comment ], remote: true) do |f| %>
         <%= f.input :content, as: :text %>
         <%= f.button :submit %>
       <% end %>
