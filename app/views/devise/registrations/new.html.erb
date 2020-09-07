@@ -8,24 +8,59 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <%= f.input :name,
+                      required: true,
+                      autofocus: true %>
+        </div>
+        <div class="form-group mt-4 ml-5">
+          <%= f.input :teacher,
+                      hint: ("Você deseja ser um professor?") %>
+        </div>
+      </div>
+      <div class="form-row">  
+        <div class="form-group col-md-5">
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.input :cpf,
+                      required: true %>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.input :occupation,
+                      required: true %>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+        </div>
+
+        <div class="form-group col-md-5">
+          <%= f.input :phone,
+                      required: true %>
+        </div>
+      </div>
     </div>
+
+    <br>
 
     <div class="form-actions">
       <%= f.button :submit, "Sign up",  class: 'btn-primary' %>
+      <%= render "devise/shared/links" %>
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <br>
 
 </div>
