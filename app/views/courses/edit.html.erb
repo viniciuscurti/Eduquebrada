@@ -1,7 +1,10 @@
 <div class="container">
-
-  <h1 class="mt-4">Editar Curso</h1>
-
+  <div class="mt-4">
+    <div class="d-flex justify-content-start">
+      <h1>Relação de Cursos Disponíveis</h1>
+    </div>  
+  </div>
+  
   <br>
 
   <div>
@@ -15,10 +18,10 @@
       <% end %>
     <% end %>
   </div>
-
+  
   <br>
-
-  <div>
+  
+   <div>
     <%= link_to "Retornar aos cursos", course_path(@course), class: "btn btn-primary" %>
   </div>
 
