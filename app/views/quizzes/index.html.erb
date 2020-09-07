@@ -1,5 +1,5 @@
-<br>
 <div class="container" style="margin-top: 7%">
+
   <div class="mt-4">
     <%= simple_form_for :quiz, url: answers_path do |f| %>
       <%= f.input :course_id, as: :hidden, input_html: { value: @course.id } %>
@@ -24,4 +24,5 @@
       <% end %>
     </div>
   </div>
+  
 </div>
