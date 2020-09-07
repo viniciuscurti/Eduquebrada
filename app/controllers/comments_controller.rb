@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     authorize @comment
     if @comment.save
-      redirect_to lesson_path(@lesson)
+      redirect_to lesson_path(@lesson, anchor: "comment-#{@comment.id}")
     else
       render 'lessons/show'
     end
