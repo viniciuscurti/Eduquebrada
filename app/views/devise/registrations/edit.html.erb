@@ -1,45 +1,84 @@
-<div class="container">
-  <div class="mt4">
+<div class="container mt-5">
+  
+  <h2 class="pt-5">Edit <%= resource_name.to_s.humanize %></h2>
 
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-    <br>
-
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-
+    <div class="form-inputs">
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <%= f.input :name,
+                      hint: "Deixe em branco se você não deseja editá-lo.",
+                      required: false %>
+        </div>
+        <div class="form-group ml-5">
+          <p>Você deseja alterar sua conta para professor?</p>
+          <%= f.input :teacher,
+                      hint: "Deixe em branco caso você seja um professor." %>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <%= f.input :cpf,
+                      hint: "Deixe em branco se você não deseja corrigi-lo.",
+                      required: false %>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.input :occupation,
+                      required: false %>
+        </div>
+        <div class="form-group col-md-5">  
+          <%= f.input :email, 
+                      required: true, 
+                      autofocus: true %>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.input :phone,
+                      hint: "Deixe em branco se você não deseja editá-lo.",
+                      required: false %>
+        </div>
+      </div>
+      <div class="form-row">
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
-
-        <%= f.input :password,
-                    hint: "leave it blank if you don't want to change it",
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    hint: "we need your current password to confirm your changes",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
+        <div class="form-group col-md-5">
+          <%= f.input :password,
+                      hint: "Deixe em branco se você não deseja editá-lo.",
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.input :password_confirmation,
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.input :current_password,
+                      hint: "Precisamos de sua senha atual para confirmar suas alterações.",
+                      required: true,
+                      input_html: { autocomplete: "current-password" } %>
+        </div>
       </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Update",  class: 'btn-primary' %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Update",  class: 'btn btn-primary' %>
+       <%= link_to "Back", :back,  class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  
+  <br>
+  
+  <div class="form-actions">
+    <div class="form-row">
+      <h5>Você deseja cancelar sua conta?</h5>
+      <div class="mx-sm-3">
+        <%= link_to "Cancelar conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-primary" %>
       </div>
-    <% end %>
+    </div>
   </div>
-  <div class="mt-2">
-    <h3>Cancel my account</h3>
-
-    <br>
-
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-    <%= link_to "Back", :back,  class: 'btn-primary' %>
-
+  
+  <br>
+  
 </div>
