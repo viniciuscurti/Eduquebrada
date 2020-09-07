@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   # def user_not_authorized
@@ -18,5 +20,10 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^enrollments$)/
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :occupation, :phone, :cpf, :teacher])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :occupation, :phone, :cpf, :teacher])
   end
 end
