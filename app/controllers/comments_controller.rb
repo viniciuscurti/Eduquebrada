@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     @lesson = Lesson.find(params[:lesson_id])
     @comment = Comment.new(comment_params)
