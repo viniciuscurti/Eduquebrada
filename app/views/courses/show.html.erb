@@ -1,27 +1,19 @@
 <%= render 'shared/sidebar2' %>
-<div class="container mt-4">
-  <div class="container pt-5">
-    <div class="d-flex justify-content-center">
-      <h1><%= @course.name %></h1>
-    </div>
+<div class="container mx-5 mt-5">
+  
+  <div class="d-flex justify-content-center">
+      <h1 class="pt-2"><%= @course.name %></h1>
   </div>
+  
   <br>
 
-  <div>
+  <div class="d-flex justify-content-between">
     <div>
-      <iframe width="560" height="315" src="<%= @course.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="800" height="450" src="<%= @course.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" fullscreen></iframe>
     </div>
-    <div>
-      <% if policy(Course).create? %>
-        <%= @course.name %>
-        <%= @course.category %>
-        <%= @course.description %>
-      <% end %>
-    </div>
-
-    <div class="align-self-end mr-3">
+    <div class="button">
       <% if current_user == @course.user %>
-        <p><%= link_to "Criar nova aula", new_course_lesson_path(@course), class: "btn btn-primary" %></p>
+        <p><%= link_to "Criar aula", new_course_lesson_path(@course), class: "btn btn-primary" %></p>
         <p><%= link_to "Criar prova", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
         <p><%= link_to "Editar curso", edit_course_path, class: "btn btn-primary" %></p>
         <% if policy(@course).destroy? %>
@@ -29,11 +21,20 @@
         <% end %>
       <% end %>
       <% unless @lesson == nil %>
-        <p><%= link_to "Vá para sua primeira aula", lesson_path(@lesson), class: "btn btn-primary" %></p>
+        <p><%= link_to "Primeira aula", lesson_path(@lesson), class: "btn btn-primary" %></p>
       <% end %>
       <% if @quizzes.present? && @enrollment.present? %>
-        <p><%= link_to "Prova", course_quizzes_path(@course), class: "btn btn-primary" %></p>
+        <p><%= link_to "Avaliação", course_quizzes_path(@course), class: "btn btn-primary" %></p>
       <% end %>
+    </div>  
+  </div>
+
+  <div class="description">
+      <% if policy(Course).create? %>
+        <div class="descriptio-t"><%= @course.name %></div>
+        <div class="description-c"><%= @course.category %></div>
+        <div class=description-d><%= @course.description %></div>
+
     <% if @enrollment.nil? && @course.user != current_user %>
       <% if policy(@course).create? %>
         <p>
@@ -42,7 +43,9 @@
           <% end %>
         </p>
       <% end %>
-    <% end %>
+  </div>
+  <div>
+    <div class="align-self-end mr-3">
       <p><%= link_to "Todos os cursos", courses_path, class: "btn btn-primary" %></p>
     </div>
   </div>

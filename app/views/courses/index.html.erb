@@ -2,7 +2,7 @@
 <div class="container mt-4">
   <div class="container pt-5">
     <div class="d-flex justify-content-center">
-      <h1 class="mt-5">Relação de Cursos Disponíveis</h1>
+      <h2 class="mt-5">Cursos Disponíveis</h2>
     </div>
   </div>
   <br>
@@ -14,7 +14,7 @@
   <div>
     <% if @courses.present? %>
       <% @courses.each do |course| %>
-          <div class="card-products">
+          <div class="card-products mb-4"> 
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-products-infos">
               <h2><%= course.name %></h2>
