@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :enrollments, only: :show
   resources :lessons, only: [:show, :edit, :update, :destroy] do
-    resources :comments, only: :create
+    resources :comments, only: :create do
+      resources :replies, only: :create
+    end
   end
   resources :quizzes, only: [:edit, :update, :destroy]
   resources :answers, only: [:create]

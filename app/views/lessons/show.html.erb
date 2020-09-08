@@ -40,7 +40,7 @@
       <div class="lessons-index">
         <% @lessons.each do |lesson| %>
           <details>
-            <summary>
+            <summary class="border-bottom">
                 <%= link_to lesson.name, lesson_path(lesson) %>
             </summary>
           </details>
@@ -64,6 +64,17 @@
           <% else %>
             <% @lesson.comments.each do |comment| %>
               <p id="comment-<%= comment.id %>"><strong><%= comment.user.email %>:</strong> <%= comment.content %></p>
+              <div id="replies">
+                <% unless comment.replies.blank? %>
+                  <% comment.replies.each do |reply| %>
+                    <p id="reply-<%= reply.id %>"><strong><%= reply.user.email %>:</strong> <%= reply.content %></p></p>
+                  <% end %>
+                <% end %>
+              </div>
+              <%= simple_form_for([ @lesson, comment, @reply ], remote: true) do |f| %>
+                <%= f.input :content, as: :text %>
+                <%= f.button :submit, class: "btn btn-primary" %>
+              <% end %>
             <% end %>
           <% end %>
         </div>

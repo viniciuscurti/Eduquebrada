@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
   def show
     @lessons = Lesson.where(course: @lesson.course)
     @comment = Comment.new
+    @reply = Reply.new
   end
 
   def new
