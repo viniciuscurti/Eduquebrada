@@ -1,13 +1,8 @@
-<div class="container mt-4">
-  <div class="pt-5">
-    <div class="d-flex justify-content-center">
-      <h1><%= @lesson.name %></h1>
-    </div>
-  </div>
+<div class="container mt-4 pb-5 pt-5">
 
   <br>
 
-  <div class="lesson-page">
+  <div class="lesson-page pt-5">
     <div>
       <div>
         <iframe width="100%" height="400" src="<%= @lesson.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -17,7 +12,7 @@
     <div class="lesson-description">
       <% if policy(@lesson).create? %>
         <h2 class="border-bottom"><%= @lesson.name %></h2>
-        <h4 class="border-bottom mt-2">Teacher:</h4>
+        <h4 class="border-bottom pt-2">Teacher:</h4>
         <p><%= @lesson.course.user.name %></p>
         <h4 class="border-bottom">Description</h4>
         <p><%= @lesson.description %></p>
@@ -75,24 +70,28 @@
 
     <div>
       <ul class="list-group">
+        <li class="list-group-item list-group-item-action d-flex justify-content-between">
+          <div><%= link_to "Voltar ao curso", course_path(@lesson.course) %></div>
+          <div><i class="fas fa-arrow-alt-circle-left"></i></div>
+        </li>
         <% @lessons.each do |lesson| %>
-          <li class="list-group-item list-group-item-action"><%= link_to lesson.name, lesson_path(lesson) %> <i class="far fa-arrow-alt-circle-right"></i></li>
+          <li class="list-group-item list-group-item-action d-flex justify-content-between">
+            <div><%= link_to lesson.name, lesson_path(lesson) %></div>
+            <div><i class="fas fa-arrow-alt-circle-right"></i></div>
+          </li>
         <% end %>
       </ul>
       <br>
-      <div class="align-self-end mr-3 d-flex">
-        <% if current_user == @lesson.course.user %>
+      <% if current_user == @lesson.course.user %>
+        <div class="align-self-end mr-3 d-flex">
           <div class="justify-content-between">
             <%= link_to "Editar aula", edit_lesson_path, class: "btn btn-primary" %>
             <% if policy(@lesson).destroy? %>
               <%= link_to "Deletar aula", lesson_path(@lesson), method: :delete, class: "btn btn-primary" %>
             <% end %>
-            <%= link_to "Voltar ao curso", course_path(@lesson.course), class: "btn btn-primary" %>
           </div>
-        <% else %>
-            <%= link_to "Voltar ao curso", course_path(@lesson.course), class: "btn btn-primary" %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

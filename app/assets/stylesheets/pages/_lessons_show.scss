@@ -41,7 +41,23 @@
 
 .list-group {
   border-radius: 6px;
+  a {
+    color: #5C677D;
+  }
+  i {
+    color: #0353A4;
+  }
+  .list-group-item:hover {
+    background-color: #0466C8;
+    a {
+      color: #F4F5F6;
+    }
+    i {
+      color: #F4F5F6;
+    }
+  }
 }
+
 
 .comment-form {
   display: inline;
