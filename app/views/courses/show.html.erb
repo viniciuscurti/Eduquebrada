@@ -34,7 +34,7 @@
       <% if @quizzes.present? && @enrollment.present? %>
         <p><%= link_to "Prova", course_quizzes_path(@course), class: "btn btn-primary" %></p>
       <% end %>
-    <% if @enrollment.nil? %>
+    <% if @enrollment.nil? && @course.user != current_user %>
       <% if policy(@course).create? %>
         <p>
           <%= simple_form_for [@course, Enrollment.new] do |f| %>
