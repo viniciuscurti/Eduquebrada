@@ -17,6 +17,9 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 16px;
+  iframe {
+    border-radius: 6px;
+  }
 }
 
 .lessons-index {

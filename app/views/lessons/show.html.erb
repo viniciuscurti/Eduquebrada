@@ -1,4 +1,4 @@
-<div class="mt-4 mx-4">
+<div class="container mt-4">
   <div class="pt-5">
     <div class="d-flex justify-content-center">
       <h1><%= @lesson.name %></h1>
@@ -16,7 +16,8 @@
 
     <div class="lesson-description">
       <% if policy(@lesson).create? %>
-        <h4 class="border-bottom">Teacher:</h4>
+        <h2 class="border-bottom"><%= @lesson.name %></h2>
+        <h4 class="border-bottom mt-2">Teacher:</h4>
         <p><%= @lesson.course.user.name %></p>
         <h4 class="border-bottom">Description</h4>
         <p><%= @lesson.description %></p>
@@ -24,13 +25,19 @@
     </div>
 
     <div>
-      <div>
+      <div class="w-100">
         <%= simple_form_for([ @lesson, @comment ], url: lesson_comments_path(@lesson), remote: true) do |f| %>
-          <%= f.input :content, as: :text, placeholder: "Teve alguma dúvida sobre o conteúdo da aula? Deixe aqui sua dúvida!", label: false %>
-          <%= f.submit "Comente", class: "btn btn-primary" %>
+          <div class="row ml-0">
+            <div style="width: 80%">
+              <%= f.input :content, as: :text, placeholder: "Teve alguma dúvida sobre o conteúdo da aula? Deixe aqui sua dúvida!", label: false, class: "w-100" %>
+            </div>
+            <div class="">
+              <%= f.submit "Comentar", class: "btn btn-primary btn-block", style: "padding: 18px; margin-left: 7px;" %>
+            </div>
+          </div>
         <% end %>
       </div>
-      <h4>
+      <h4 class="mt-2">
         <%= pluralize @lesson.comments.size, "comentário" %>
       </h4>
       <div id="comments">
@@ -39,22 +46,24 @@
         <% else %>
           <% @lesson.comments.each do |comment| %>
             <details>
-              <summary class="border-bottom">
+              <summary class="border-bottom my-3 mx-3 d-flex align-items-center">
                 <span id="comment-<%= comment.id %>"><strong><%= comment.user.email %>:</strong> <%= comment.content %></span>
               </summary>
               <div id="replies">
                 <% if comment.replies.blank? %>
                   <%= simple_form_for([ comment, @reply ], remote: true) do |f| %>
                     <%= f.input :content, as: :text, placeholder: "Deixe uma resposta!", label: false  %>
-                    <%= f.submit "Responda", class: "btn btn-primary" %>
+                    <%= f.submit "Responder", class: "btn btn-primary" %>
                   <% end %>
                 <% else %>
                   <% comment.replies.each do |reply| %>
-                    <p id="reply-<%= reply.id %>"><strong><%= reply.user.email %>:</strong> <%= reply.content %></p>
+                    <p id="reply-<%= reply.id %>" class="border-bottom my-3 mx-3 d-flex align-items-center"><strong><%= reply.user.email %>: </strong> <%= reply.content %></p>
                   <% end %>
                   <%= simple_form_for([ comment, @reply ], remote: true) do |f| %>
-                    <%= f.input :content, as: :text, placeholder: "Deixe uma resposta!", label: false %>
-                    <%= f.submit "Responda", class: "btn btn-primary" %>
+                    <div class="justify-content-center">
+                      <%= f.input :content, as: :text, placeholder: "Deixe uma resposta!", label: false %>
+                      <%= f.submit "Responder", class: "btn btn-primary" %>
+                    </div>
                   <% end %>
                 <% end %>
               </div>
