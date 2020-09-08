@@ -1,53 +1,66 @@
 <%= render 'shared/sidebar2' %>
-<div class="container mx-5 mt-5">
+
+<div class="container mx-10 mt-5">
   
   <div class="d-flex justify-content-center">
-      <h1 class="pt-2"><%= @course.name %></h1>
+    <h1 class="pt-2"><%= @course.name %></h1>
   </div>
   
   <br>
 
-  <div class="d-flex justify-content-between">
+  <div class="show-page">
     <div>
-      <iframe width="800" height="450" src="<%= @course.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" fullscreen></iframe>
+      <div>
+        <iframe width="100%" height="400" src="<%= @lesson.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
-    <div class="button">
-      <% if current_user == @course.user %>
-        <p><%= link_to "Criar aula", new_course_lesson_path(@course), class: "btn btn-primary" %></p>
-        <p><%= link_to "Criar prova", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
-        <p><%= link_to "Editar curso", edit_course_path, class: "btn btn-primary" %></p>
-        <% if policy(@course).destroy? %>
-          <p><%= link_to "Apagar curso", course_path(@course), method: :delete, class: "btn btn-primary" %></p>
-        <% end %>
+
+    <div class="show-description">
+      <% if policy(Course).create? %>
+        <h4 class="border-bottom"><%= @course.name %></h4>
+        <h4 class="border-bottom">Categoria: <%= @course.category %></h4>
+        <h4 class="border-bottom">Descrição: </h4>
+        <p><%= @course.description %></p>
       <% end %>
+    </div>
+    
+    
+    <div class="align-self-end mr-3 d-flex">
+      <% if current_user == @course.user %>
+        <div class="justify-content-between">
+          <p><%= link_to "Criar aula", new_course_lesson_path(@course), class: "btn btn-primary" %></p>
+          <p><%= link_to "Criar prova", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
+          <p><%= link_to "Editar curso", edit_course_path, class: "btn btn-primary" %></p>
+        
+          <% if policy(@course).destroy? %>
+            <p><%= link_to "Apagar curso", course_path(@course), method: :delete, class: "btn btn-primary" %></p>
+          <% end %>
+        </div>
+      <% end %>
+        
       <% unless @lesson == nil %>
         <p><%= link_to "Primeira aula", lesson_path(@lesson), class: "btn btn-primary" %></p>
       <% end %>
+        
       <% if @quizzes.present? && @enrollment.present? %>
         <p><%= link_to "Avaliação", course_quizzes_path(@course), class: "btn btn-primary" %></p>
       <% end %>
-    </div>  
-  </div>
-
-  <div class="description">
-      <% if policy(Course).create? %>
-        <div class="descriptio-t"><%= @course.name %></div>
-        <div class="description-c"><%= @course.category %></div>
-        <div class=description-d><%= @course.description %></div>
-
-    <% if @enrollment.nil? && @course.user != current_user %>
-      <% if policy(@course).create? %>
-        <p>
-          <%= simple_form_for [@course, Enrollment.new] do |f| %>
-          <%= f.button :submit, "Inscreva-se", class: 'btn-primary' %>
-          <% end %>
-        </p>
+          
+      <% if @enrollment.nil? && @course.user != current_user %>
+        <% if policy(@course).create? %>
+          <p>
+            <%= simple_form_for [@course, Enrollment.new] do |f| %>
+            <%= f.button :submit, "Inscreva-se", class: 'btn-primary' %>
+            <% end %>
+          </p>
+        <% end %>
       <% end %>
-  </div>
-  <div>
-    <div class="align-self-end mr-3">
-      <p><%= link_to "Todos os cursos", courses_path, class: "btn btn-primary" %></p>
+    </div>
+    
+    <div>
+      <div>
+        <p><%= link_to "Todos os cursos", courses_path, class: "btn btn-primary" %></p>
+      </div>
     </div>
   </div>
-
 </div>
