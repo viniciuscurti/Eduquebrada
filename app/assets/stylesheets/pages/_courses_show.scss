@@ -1,29 +1,13 @@
-.description {
-  margin-top: 20px;
-  box-shadow: 5px 5px 10px 4px rgba(0,0,0,0.5);
-  height: 200px;
-  width: 800px;
 
+.show-page {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 16px;
 }
 
-.description-t {
-  margin-left: 20px;
-  margin-top: 15px;
-}
-
-.description-c {
-  margin-left:20px;
-  margin-top: 50px;
-}
-
-.description-d {
-  margin-left:20px;
-  margin-top: 25px;
-  margin-bottom: 20px;
-}
-
-.button {
-  margin-left:20px
+.show-description {
+  max-height: 400px;
+  overflow: scroll;
 }
 
 h1{
