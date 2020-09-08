@@ -3,6 +3,14 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 16px;
+   iframe {
+    border-radius: 6px;
+  }
+}
+
+.show-buttom {
+  justify-content: space-between;
+  display: inline;
 }
 
 .show-description {
@@ -10,6 +18,3 @@
   overflow: scroll;
 }
 
-h1{
-  margin-top: 45px !important; 
-}
