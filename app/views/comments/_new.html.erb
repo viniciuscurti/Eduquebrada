@@ -1,0 +1,4 @@
+<%= simple_form_for([ @lesson, @comment ], url: lesson_comments_path(@lesson), remote: true) do |f| %>
+  <%= f.input :content, as: :text, placeholder: "Teve alguma dúvida sobre o conteúdo da aula? Deixe aqui sua dúvida!", label: false %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

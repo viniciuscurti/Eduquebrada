@@ -1,0 +1,4 @@
+<%= simple_form_for([ @comment, @reply ], remote: true) do |f| %>
+  <%= f.input :content, as: :text %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

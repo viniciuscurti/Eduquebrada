@@ -26,15 +26,6 @@
       <% if @quizzes.present? && @enrollment.present? %>
         <p><%= link_to "Avaliação", course_quizzes_path(@course), class: "btn btn-primary" %></p>
       <% end %>
-      <% if @enrollment.nil? %>
-        <% if policy(@course).create? %>
-          <p>
-            <%= simple_form_for [@course, Enrollment.new] do |f| %>
-            <%= f.button :submit, "Inscreva-se", class: 'btn-primary' %>
-            <% end %>
-          </p>
-        <% end %>
-      <% end %>
     </div>  
   </div>
 
@@ -43,6 +34,14 @@
         <div class="descriptio-t"><%= @course.name %></div>
         <div class="description-c"><%= @course.category %></div>
         <div class=description-d><%= @course.description %></div>
+
+    <% if @enrollment.nil? && @course.user != current_user %>
+      <% if policy(@course).create? %>
+        <p>
+          <%= simple_form_for [@course, Enrollment.new] do |f| %>
+          <%= f.button :submit, "Inscreva-se", class: 'btn-primary' %>
+          <% end %>
+        </p>
       <% end %>
   </div>
   <div>
