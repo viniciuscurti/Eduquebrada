@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_173226) do
+ActiveRecord::Schema.define(version: 2020_09_08_004008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2020_09_02_173226) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["enrollment_id"], name: "index_answers_on_enrollment_id"
     t.index ["quiz_id"], name: "index_answers_on_quiz_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "lesson_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_comments_on_lesson_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -70,6 +80,16 @@ ActiveRecord::Schema.define(version: 2020_09_02_173226) do
     t.index ["course_id"], name: "index_quizzes_on_course_id"
   end
 
+  create_table "replies", force: :cascade do |t|
+    t.text "content"
+    t.bigint "comment_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comment_id"], name: "index_replies_on_comment_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -89,9 +109,13 @@ ActiveRecord::Schema.define(version: 2020_09_02_173226) do
 
   add_foreign_key "answers", "enrollments"
   add_foreign_key "answers", "quizzes"
+  add_foreign_key "comments", "lessons"
+  add_foreign_key "comments", "users"
   add_foreign_key "courses", "users"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
   add_foreign_key "lessons", "courses"
   add_foreign_key "quizzes", "courses"
+  add_foreign_key "replies", "comments"
+  add_foreign_key "replies", "users"
 end
