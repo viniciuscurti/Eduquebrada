@@ -1,6 +1,7 @@
-<div class="container" style="margin-top: 7%">
+<div class="container mt-5">
 
-  <div class="mt-4">
+  <h3 class="pt-5">Avaliação de Conteúdo</h3>
+
     <%= simple_form_for :quiz, url: answers_path do |f| %>
       <%= f.input :course_id, as: :hidden, input_html: { value: @course.id } %>
       <% @quizzes.each do |quiz| %>
@@ -23,6 +24,5 @@
         <p><%= link_to "Crie uma nova questão", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
       <% end %>
     </div>
-  </div>
-  
+
 </div>
