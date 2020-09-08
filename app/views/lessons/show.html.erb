@@ -1,4 +1,4 @@
-<div class="mt-4 mx-4">
+<div class="container mt-4">
   <div class="pt-5">
     <div class="d-flex justify-content-center">
       <h1><%= @lesson.name %></h1>
@@ -26,8 +26,14 @@
     <div>
       <div>
         <%= simple_form_for([ @lesson, @comment ], url: lesson_comments_path(@lesson), remote: true) do |f| %>
-          <%= f.input :content, as: :text, placeholder: "Teve alguma dúvida sobre o conteúdo da aula? Deixe aqui sua dúvida!", label: false %>
-          <%= f.submit "Comente", class: "btn btn-primary" %>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-10">
+              <%= f.input :content, as: :text, input_html: { rows: 3 }, placeholder: "Teve alguma dúvida sobre o conteúdo da aula? Deixe aqui sua dúvida!", label: false %>
+            </div>
+            <div class="col-2">
+              <%= f.submit "Comente", class: "btn btn-primary btn-block" %>
+            </div>
+          </div>
         <% end %>
       </div>
       <h4>
@@ -39,7 +45,7 @@
         <% else %>
           <% @lesson.comments.each do |comment| %>
             <details>
-              <summary class="border-bottom">
+              <summary class="border-bottom my-3 mx-3 d-flex align-items-center">
                 <span id="comment-<%= comment.id %>"><strong><%= comment.user.email %>:</strong> <%= comment.content %></span>
               </summary>
               <div id="replies">
