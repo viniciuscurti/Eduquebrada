@@ -24,14 +24,14 @@
       <div class="align-self-end mr-3 d-flex">
         <% if current_user == @lesson.course.user %>
           <div class="justify-content-between">
-            <%= link_to "Edit lesson", edit_lesson_path, class: "btn btn-primary" %>
+            <%= link_to "Editar aula", edit_lesson_path, class: "btn btn-primary" %>
             <% if policy(@lesson).destroy? %>
-              <%= link_to "Delete", lesson_path(@lesson), method: :delete, class: "btn btn-primary" %>
+              <%= link_to "Deletar aula", lesson_path(@lesson), method: :delete, class: "btn btn-primary" %>
             <% end %>
-            <%= link_to "Back to Course", course_path(@lesson.course), class: "btn btn-primary" %>
+            <%= link_to "Voltar ao curso", course_path(@lesson.course), class: "btn btn-primary" %>
           </div>
         <% else %>
-            <%= link_to "Back to Course", course_path(@lesson.course), class: "btn btn-primary" %>
+            <%= link_to "Voltar ao curso", course_path(@lesson.course), class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
@@ -56,11 +56,11 @@
       <br>
       <div>
         <h4>
-          <%= pluralize @lesson.comments.size, "comment" %>
+          <%= pluralize @lesson.comments.size, "comentário" %>
         </h4>
         <div id="comments">
           <% if @lesson.comments.blank? %>
-            Be the first to leave a comment for <%= @lesson.name %>
+            Seja o primeiro a deixar um comentário.
           <% else %>
             <% @lesson.comments.each do |comment| %>
               <p id="comment-<%= comment.id %>"><strong><%= comment.user.email %>:</strong> <%= comment.content %></p>
