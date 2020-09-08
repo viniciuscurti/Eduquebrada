@@ -11,7 +11,7 @@
   <div class="show-page">
     <div>
       <div>
-        <iframe width="100%" height="400" src="<%= @lesson.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="400" src="<%= @course.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
 
@@ -37,24 +37,23 @@
           <% end %>
         </div>
       <% end %>
-        
-      <% unless @lesson == nil %>
-        <p><%= link_to "Primeira aula", lesson_path(@lesson), class: "btn btn-primary" %></p>
-      <% end %>
-        
-      <% if @quizzes.present? && @enrollment.present? %>
-        <p><%= link_to "Avaliação", course_quizzes_path(@course), class: "btn btn-primary" %></p>
-      <% end %>
-          
-      <% if @enrollment.nil? && @course.user != current_user %>
-        <% if policy(@course).create? %>
-          <p>
+      
+      <div>
+        <% if @enrollment.nil? && @course.user != current_user %>
+          <% if policy(@course).create? %>
             <%= simple_form_for [@course, Enrollment.new] do |f| %>
             <%= f.button :submit, "Inscreva-se", class: 'btn-primary' %>
             <% end %>
-          </p>
+          <% end %>
         <% end %>
-      <% end %>
+        <% unless @lesson == nil %>
+          <p><%= link_to "Primeira aula", lesson_path(@lesson), class: "btn btn-primary" %></p>
+        <% end %>
+        <% if @quizzes.present? && @enrollment.present? %>
+          <p><%= link_to "Avaliação", course_quizzes_path(@course), class: "btn btn-primary" %></p>
+        <% end %>
+      </div>
+
     </div>
     
     <div>
