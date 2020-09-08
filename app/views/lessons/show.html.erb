@@ -67,7 +67,7 @@
     <div>
       <ul class="list-group">
         <% @lessons.each do |lesson| %>
-          <li class="list-group-item list-group-item-action"><%= link_to lesson.name, lesson_path(lesson) %></li>
+          <li class="list-group-item list-group-item-action"><%= link_to lesson.name, lesson_path(lesson) %> <i class="far fa-arrow-alt-circle-right"></i></li>
         <% end %>
       </ul>
       <br>
