@@ -4,6 +4,8 @@ class EnrollmentsController < ApplicationController
   def show
     @enrollment = Enrollment.find(params[:id])
     @enrollment.approved
+    @total = @enrollment.total_answers
+    @result = @enrollment.right_answers
   end
 
   def new
@@ -41,11 +43,9 @@ class EnrollmentsController < ApplicationController
       background: "app/assets/images/fundo_certificado.png",
       margin: [40, 75]
     }
-
     # enrollment = Enrollment.find(params[:id])
 
     Prawn::Document.new(options) do |pdf|
-      raise
       pdf.fill_color "40464e"
       pdf.text "NOME DO CURSO", size: 40, style: :bold, align: :center
 
