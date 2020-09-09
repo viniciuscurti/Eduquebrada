@@ -1,11 +1,14 @@
-<div class="container mt-5">
-
-  <h3 class="pt-5">Avaliação de Conteúdo</h3>
+<div class="container mt-5 pt-5">
+  <div class="quiz-container">
+    <h3 class="quiz-title pt-2">Avaliação de Conteúdo</h3>
 
     <%= simple_form_for :quiz, url: answers_path do |f| %>
       <%= f.input :course_id, as: :hidden, input_html: { value: @course.id } %>
       <% @quizzes.each do |quiz| %>
-        <%= f.input :"question[#{quiz.id}]", label: quiz.question, as: :radio_buttons, collection: (1..5).to_a.shuffle.map { |n| [quiz.send("answer_#{n}"), n] } %>
+        <%= f.input :"question[#{quiz.id}]",
+                    label: quiz.question, wrapper_html: {class: "quiz"},
+                    as: :radio_buttons,
+                    collection: (1..5).to_a.shuffle.map { |n| [quiz.send("answer_#{n}"), n] } %>
         <div>
           <% if current_user == quiz.course.user %>
             <p><%= link_to "Edite a questão", edit_quiz_path(quiz), class: "btn btn-primary" %></p>
@@ -24,5 +27,5 @@
         <p><%= link_to "Crie uma nova questão", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
       <% end %>
     </div>
-
+  </div>
 </div>
