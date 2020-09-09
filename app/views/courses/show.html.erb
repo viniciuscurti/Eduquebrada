@@ -1,6 +1,5 @@
 <%= render 'shared/sidebar2' %>
-
-<div class="container mx-10 mt-5 mb-4">
+<div class="container mx-10 mt-4 mb-4">
 
   <br>
 
@@ -14,7 +13,6 @@
     <div class="show-description">
       <% if policy(Course).create? %>
         <h2 class="border-bottom pt-2"><%= @course.name %></h2>
-
         <h4 class="border-bottom pt-2">Categoria:</h4>
         <p><%= @course.category %></p>
         <h4 class="border-bottom pt-2">Descrição: </h4>
