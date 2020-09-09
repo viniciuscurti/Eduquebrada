@@ -5,26 +5,28 @@
     <%= simple_form_for :quiz, url: answers_path do |f| %>
       <%= f.input :course_id, as: :hidden, input_html: { value: @course.id } %>
       <% @quizzes.each do |quiz| %>
-        <%= f.input :"question[#{quiz.id}]",
-                    label: quiz.question, wrapper_html: {class: "quiz"},
-                    as: :radio_buttons,
-                    collection: (1..5).to_a.shuffle.map { |n| [quiz.send("answer_#{n}"), n] } %>
-        <div>
+        <div class="my-4">
+          <%= f.input :"question[#{quiz.id}]",
+                      label: quiz.question, wrapper_html: {class: "quiz"},
+                      as: :radio_buttons,
+                      collection: (1..5).to_a.shuffle.map { |n| [quiz.send("answer_#{n}"), n] } %>
+        </div>
+        <div class="row justify-content-around">
           <% if current_user == quiz.course.user %>
-            <p><%= link_to "Edite a questão", edit_quiz_path(quiz), class: "btn btn-primary" %></p>
+              <%= link_to "Edite a questão", edit_quiz_path(quiz), class: "btn btn-primary btn-quiz" %>
             <% if policy(quiz).destroy? %>
-              <p><%= link_to "Apagar questão", quiz_path(quiz), method: :delete, class: "btn btn-primary" %></p>
+              <%= link_to "Apagar questão", quiz_path(quiz), method: :delete, class: "btn btn-primary btn-quiz" %>
             <% end %>
           <% end %>
         </div>
       <% end %>
       <% unless current_user == @course.user %>
-        <%= f.submit "Enviar", class: "btn btn-primary"%>
+        <%= f.submit "Enviar", class: "btn btn-primary w-100" %>
       <% end %>
     <% end %>
     <div>
       <% if current_user == @course.user %>
-        <p><%= link_to "Crie uma nova questão", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
+        <%= link_to "Crie uma nova questão", new_course_quiz_path(@course), class: "btn btn-primary w-100" %>
       <% end %>
     </div>
   </div>
