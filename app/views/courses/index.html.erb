@@ -14,13 +14,12 @@
   <div>
     <% if @courses.present? %>
       <% @courses.each do |course| %>
-          <div class="card-products mb-4"> 
+          <div class="card-products mb-4">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-products-infos">
               <h2><%= course.name %></h2>
               <p><strong>Categoria:</strong> <%= course.category %></p>
               <p><strong>Professor:</strong> <%= course.user.name %></p>
-              <p><strong>Descrição:</strong> <%= course.description %></p>
               <p><%= link_to "Detalhes", course_path(course), class: "btn btn-primary" %></p>
             </div>
           </div>

@@ -1,7 +1,7 @@
 <%= render 'shared/sidebar2' %>
 
 <div class="container mx-10 mt-5 mb-4">
-  
+
   <br>
 
   <div class="show-page pt-5 mb-4">
@@ -13,25 +13,25 @@
 
     <div class="show-description">
       <% if policy(Course).create? %>
-        <h4 class="border-bottom pt-2"><%= @course.name %></h4>
+        <h2 class="border-bottom pt-2"><%= @course.name %></h2>
         <h4 class="border-bottom pt-2">Categoria: <%= @course.category %></h4>
         <h4 class="border-bottom pt-2">Descrição: </h4>
         <p><%= @course.description %></p>
       <% end %>
-    </div>  
-  </div>  
-  
+    </div>
+  </div>
+
   <div class="show-buttom">
     <% if current_user == @course.user %>
       <%= link_to "Criar aula", new_course_lesson_path(@course), class: "btn btn-primary" %>
       <%= link_to "Criar prova", new_course_quiz_path(@course), class: "btn btn-primary" %>
       <%= link_to "Editar curso", edit_course_path, class: "btn btn-primary" %>
-    
+
       <% if policy(@course).destroy? %>
         <%= link_to "Apagar curso", course_path(@course), method: :delete, class: "btn btn-primary" %>
       <% end %>
     <% end %>
-        
+
     <% if @enrollment.nil? && @course.user != current_user %>
       <% if policy(@course).create? %>
         <%= simple_form_for [@course, Enrollment.new] do |f| %>
@@ -39,16 +39,16 @@
         <% end %>
       <% end %>
     <% end %>
-    
+
     <% unless @lesson == nil %>
       <%= link_to "Primeira aula", lesson_path(@lesson), class: "btn btn-primary" %>
     <% end %>
-    
+
     <% if @quizzes.present? && @enrollment.present? %>
       <%= link_to "Avaliação", course_quizzes_path(@course), class: "btn btn-primary" %>
     <% end %>
-    
+
     <%= link_to "Todos os cursos", courses_path, class: "btn btn-primary" %>
   </div>
-  
+
 </div>
