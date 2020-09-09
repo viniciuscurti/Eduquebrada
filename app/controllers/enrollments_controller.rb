@@ -27,6 +27,8 @@ class EnrollmentsController < ApplicationController
   end
 
   def submit
+    @enrollment = Enrollment.find(params[:id])
+    authorize @enrollment
     send_data(generate_pdf, filename: "certificado.pdf", type: "application/pdf")
   end
 
@@ -43,18 +45,17 @@ class EnrollmentsController < ApplicationController
       background: "app/assets/images/fundo_certificado_2.jpeg",
       margin: [40, 75]
     }
-    # enrollment = Enrollment.find(params[:id])
 
     Prawn::Document.new(options) do |pdf|
       pdf.fill_color "40464e"
       pdf.move_down 20
-      pdf.text "NOME DO CURSO", size: 40, style: :bold, align: :center
+      pdf.text "#{@enrollment.course.name}", size: 40, style: :bold, align: :center
 
       pdf.move_down 30
       pdf.text "Certificado", size: 24, align: :center, style: :bold
 
       pdf.move_down 30
-      pdf.text "Certificamos que <b>Nando Vieira</b> participou...", inline_format: true
+      pdf.text "Certificamos que <b>#{@enrollment.user.name}</b> participou...", inline_format: true
 
       pdf.move_down 15
       pdf.text "São Paulo, #{Time.now.strftime("%d/%m/%Y")}."
