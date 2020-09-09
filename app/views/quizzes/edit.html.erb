@@ -1,7 +1,10 @@
-<h1 class="mt-4">Editar Questão</h1>
+<div class="container mt-5">
+  <div class="d-flex justify-content-start">
+    <h1 class="pt-5">Editar Questão</h1>
+  </div>
+  
+  <br>
 
-<br>
-<div>
   <div>
     <% if policy(@quiz).edit? %>
       <%= simple_form_for(@quiz) do |f| %>
@@ -11,14 +14,10 @@
       <%= f.input :answer_3 %>
       <%= f.input :answer_4 %>
       <%= f.input :answer_5 %>
-      <%= f.submit 'Atualizar', class: 'btn-primary' %>
+      <%= f.submit 'Atualizar', class: 'btn btn-primary' %>
+      <%= link_to "Voltar para Teste", course_quizzes_path(@quiz.course), class: "btn btn-primary" %>
       <% end %>
     <% end %>
   </div>
 
-  <br>
-
-  <div>
-    <%= link_to "Voltar para Teste", course_quizzes_path(@quiz.course), class: "btn btn-primary" %>
-  </div>
 </div>
