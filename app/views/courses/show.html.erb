@@ -1,16 +1,16 @@
 <%= render 'shared/sidebar2' %>
 <div class="container mx-10 mt-5">
-  
+
   <div class="d-flex justify-content-center">
     <h1 class="pt-2"><%= @course.name %></h1>
   </div>
-  
+
   <br>
 
   <div class="show-page">
     <div>
       <div>
-        <iframe width="100%" height="400" src="<%= @lesson.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="400" src="<%= @course.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
 
@@ -22,29 +22,29 @@
         <p><%= @course.description %></p>
       <% end %>
     </div>
-    
-    
+
+
     <div class="align-self-end mr-3 d-flex">
       <% if current_user == @course.user %>
         <div class="justify-content-between">
           <p><%= link_to "Criar aula", new_course_lesson_path(@course), class: "btn btn-primary" %></p>
           <p><%= link_to "Criar prova", new_course_quiz_path(@course), class: "btn btn-primary" %></p>
           <p><%= link_to "Editar curso", edit_course_path, class: "btn btn-primary" %></p>
-        
+
           <% if policy(@course).destroy? %>
             <p><%= link_to "Apagar curso", course_path(@course), method: :delete, class: "btn btn-primary" %></p>
           <% end %>
         </div>
       <% end %>
-        
+
       <% unless @lesson == nil %>
         <p><%= link_to "Primeira aula", lesson_path(@lesson), class: "btn btn-primary" %></p>
       <% end %>
-        
+
       <% if @quizzes.present? && @enrollment.present? %>
         <p><%= link_to "Avaliação", course_quizzes_path(@course), class: "btn btn-primary" %></p>
       <% end %>
-          
+
       <% if @enrollment.nil? && @course.user != current_user %>
         <% if policy(@course).create? %>
           <p>
@@ -55,7 +55,7 @@
         <% end %>
       <% end %>
     </div>
-    
+
     <div>
       <div>
         <p><%= link_to "Todos os cursos", courses_path, class: "btn btn-primary" %></p>
