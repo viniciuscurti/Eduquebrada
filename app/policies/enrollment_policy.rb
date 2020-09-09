@@ -28,4 +28,8 @@ class EnrollmentPolicy < ApplicationPolicy
   def destroy?
     record.course.user == user || user.admin?
   end
+
+  def submit?
+    record.user == user || user.admin?
+  end
 end

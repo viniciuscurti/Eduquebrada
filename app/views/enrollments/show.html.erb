@@ -1,9 +1,20 @@
 <div class="container" style="margin-top: 10%;">
-  <% if @enrollment.completed %>
-    <h1>Parabéns! Você foi aprovado na prova do <%= @enrollment.course.name %>!</h1>
-    <p>Acesse seu certificado clicando <%= link_to "aqui", downloadpdf_path(@enrollment) %></p>
-  <% else %>
-    <h1>Infelizmente não foi desta vez.</h1>
-    <p><%= link_to "Volte ao curso", course_path(@enrollment.course), class: "btn btn-primary" %></p>
-  <% end %>
+  <div class="enrollment-container">
+    <% if @enrollment.completed %>
+      <div>
+        <h1 class="border-bottom">Parabéns!</h1>
+        <h4 class="mt-4">Você foi aprovado em <strong><%= @enrollment.course.name %></strong>, tendo acertado <%= @result %> dentre <%= @total %> questões.</h4>
+        <%= link_to "Certificado", downloadpdf_path(@enrollment), class: "btn btn-primary col-sm my-3" %>
+        <%= link_to "Volte ao curso", course_path(@enrollment.course), class: "btn btn-primary col-sm" %>
+      </div>
+    <% else %>
+      <div>
+        <h5 class="border-bottom">Você acertou <%= @result %> dentre <%= @total %> questões.</h5>
+        <p>Foi por pouco! <strong>Não desista</strong>, seu certificado está mais próximo do que você imagina!</p>
+        <p>Revise as aulas, tire suas dúvidas com o professor e retorne mais preparado na próxima vez.</p>
+        <%= link_to "Certificado", downloadpdf_path(@enrollment), class: "btn btn-primary disabled col-sm my-3" %>
+        <%= link_to "Volte ao curso", course_path(@enrollment.course), class: "btn btn-primary col-sm" %>
+      </div>
+    <% end %>
+  </div>
 </div>

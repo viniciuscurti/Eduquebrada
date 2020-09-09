@@ -2,12 +2,16 @@ footer{
   background-color: #001845;
   padding:30px 0px;
   height: 271px;
+  position: relative;
+  bottom: 0;
 }	       
+
 
 .logo{
   color: #979DAC;
   img{
-    margin-left: 156px;
+    margin-left: 120px;
+    margin-top: 30px;
   }
   h5{
     margin-left: 53px;
@@ -21,9 +25,9 @@ footer{
 }
 
 .address span , .menu span{
-color: #979DAC; 
-font-weight: bold; 
-border-bottom: 1px solid #c7c7c7; 
+color: #979DAC;
+font-weight: bold;
+border-bottom: 1px solid #c7c7c7;
 padding:10px 0px;
 display: block;
 text-transform: uppercase;

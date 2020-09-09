@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   resources :quizzes, only: [:edit, :update, :destroy]
   resources :answers, only: [:create]
 
-  get "downloadpdf", to: "enrollments#submit"
+  get "downloadpdf/:id", to: "enrollments#submit", as: :downloadpdf
 end
 
