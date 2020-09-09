@@ -12,6 +12,7 @@
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :url %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit 'Atualização', class: 'btn btn-primary' %>
         <%= link_to "Retornar aos cursos", course_path(@course), class: "btn btn-primary" %>
       <% end %>
