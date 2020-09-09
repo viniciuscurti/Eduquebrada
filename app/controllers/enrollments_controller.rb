@@ -35,8 +35,36 @@ class EnrollmentsController < ApplicationController
   end
 
   def generate_pdf
-    Prawn::Document.new do
-      text "PARABÉNS! AQUI ESTÁ SEU CERTIFICADO DE OTÁRIO! UHULL"
+    options = {
+      page_size: "A5",
+      page_layout: :landscape,
+      background: "app/assets/images/fundo_certificado.png",
+      margin: [40, 75]
+    }
+
+    # enrollment = Enrollment.find(params[:id])
+
+    Prawn::Document.new(options) do |pdf|
+      raise
+      pdf.fill_color "40464e"
+      pdf.text "NOME DO CURSO", size: 40, style: :bold, align: :center
+
+      pdf.move_down 30
+      pdf.text "Certificado", size: 24, align: :center, style: :bold
+
+      pdf.move_down 30
+      pdf.text "Certificamos que <b>Nando Vieira</b> participou...", inline_format: true
+
+      pdf.move_down 15
+      pdf.text "São Paulo, #{Time.now.strftime("%d/%m/%Y")}."
+
+      pdf.move_down 30
+      # pdf.font Rails.root.join("fonts/custom.ttf")
+      pdf.text "howto", size: 24
+
+      pdf.move_up 5
+      pdf.font "Helvetica"
+      pdf.text "https://eduquebrada.com.br/", size: 10
     end.render
   end
 end
