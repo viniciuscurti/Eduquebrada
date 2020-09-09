@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="form-row">
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
           <div class="form-group col-md-5">
