@@ -42,7 +42,7 @@
           <% @lesson.comments.each do |comment| %>
             <details>
               <summary class="border-bottom my-3 mx-3 d-flex align-items-center">
-                <span id="comment-<%= comment.id %>"><strong><%= comment.user.email %>:</strong> <%= comment.content %></span>
+                <span id="comment-<%= comment.id %>"><strong><%= comment.user.name %>:</strong> <%= comment.content %></span>
               </summary>
               <div id="replies">
                 <% if comment.replies.blank? %>
@@ -52,7 +52,7 @@
                   <% end %>
                 <% else %>
                   <% comment.replies.each do |reply| %>
-                    <p id="reply-<%= reply.id %>" class="border-bottom my-3 mx-3 d-flex align-items-center"><strong><%= reply.user.email %>: </strong> <%= reply.content %></p>
+                    <p id="reply-<%= reply.id %>" class="border-bottom my-3 mx-3 d-flex align-items-center"><strong><%= reply.user.name %>: </strong> <%= reply.content %></p>
                   <% end %>
                   <%= simple_form_for([ comment, @reply ], remote: true) do |f| %>
                     <div class="justify-content-center">
