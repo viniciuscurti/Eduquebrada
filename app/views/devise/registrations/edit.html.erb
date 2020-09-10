@@ -74,8 +74,8 @@
       </div>
       <div class="form-actions mb-3">
         <%= f.button :submit, "Atualizar",  class: 'btn btn-primary' %>
-        <%= link_to "Retornar", :back,  class: 'btn btn-primary' %>
-        <%= link_to "Cancelar conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-primary" %>
+        <%= link_to "Homepage", root_path,  class: 'btn btn-secondary' %>
+        <%= link_to "Cancelar conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-warning" %>
       </div>
     <% end %>
   </div>
