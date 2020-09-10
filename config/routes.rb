@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   resources :answers, only: [:create, :destroy]
 
   get "downloadpdf/:id", to: "enrollments#submit", as: :downloadpdf
+  
 end
 
