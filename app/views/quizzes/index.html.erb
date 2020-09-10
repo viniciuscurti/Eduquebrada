@@ -15,7 +15,7 @@
           <% if current_user == quiz.course.user %>
               <%= link_to "Edite a questão", edit_quiz_path(quiz), class: "btn btn-primary btn-quiz" %>
             <% if policy(quiz).destroy? %>
-              <%= link_to "Apagar questão", quiz_path(quiz), method: :delete, class: "btn btn-primary btn-quiz" %>
+              <%= link_to "Apagar questão", quiz_path(quiz), method: :delete, data: { confirm: 'Você tem certeza que deseja deletar?' }, class: "btn btn-primary btn-quiz" %>
             <% end %>
           <% end %>
         </div>
