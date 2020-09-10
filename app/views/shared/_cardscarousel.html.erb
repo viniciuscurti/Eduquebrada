@@ -1,49 +1,38 @@
 <!--Carousel Wrapper-->
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
   <h2>Conheça nossos cursos:</h2>
   <p>Feito por <strong>pessoas</strong> que querem compartilhar 
     conhecimento e mudar vidas</p>
-  <!--Indicators-->
-  <ol class="carousel-indicators">
-    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-    <li data-target="#multi-item-example" data-slide-to="1"></li>
-  </ol>
   <!--/.Indicators-->
   <!--Slides-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
   <div class="carousel-inner" role="listbox">
     <!--First slide-->
-    <div class="carousel-item active">
-      <% @last_courses.each do |course| %>
-      <%# <%= cl_image_tag course.photo.key, crop: :fill, class: "card-photo" %>
-      
-      <div class="col-md-3" style="float:left">
-        <div class="card mb-2">
-          <div class="card-body">
-            <h4 class="card-title"><%= course.category %></h4>
-            <%= link_to "Detalhes", course_path(course), class: "btn btn-primary" %>
+    <div class="carousel-item active" >
+      <% @last_courses.first(4).each do |course| %>
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-2">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+              <h4 class="card-title"><%= link_to "#{course.category}", course.category %></h4>
+            </div>
           </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>  
+        </div> 
+      <% end %> 
+    </div>     
+ 
+    <div class="carousel-item" >
+      <% @last_courses.last(4).each do |course| %>
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-2">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+              <h4 class="card-title"><%= link_to "#{course.category}", course.category %></h4>
+            </div>
+          </div>
+        </div> 
+      <% end %> 
+    </div>     
+  </div>
+</div>
     <!--/.First slide-->
-
-    <!--Second slide-->
-    <div class="carousel-item">
-      <% @last_courses.each do |course| %>
-      <%# <%= cl_image_tag course.photo.key, crop: :fill, class: "card-photo" %>
-      <div class="col-md-3" style="float:left">
-        <div class="card mb-2">
-          <div class="card-body">
-            <h4 class="card-title"><%= course.category %></h4>
-            <%= link_to "Detalhes", course_path(course), class: "btn btn-primary" %>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-    <!--/.Second slide-->
     <!--Controls-->
   <div class="controls-top">
     <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
