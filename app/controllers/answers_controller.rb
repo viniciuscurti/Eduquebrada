@@ -12,4 +12,11 @@ class AnswersController < ApplicationController
     end
     redirect_to enrollment_path(enrollment)
   end
+
+  def destroy
+    @answer = Answer.find(params[:id])
+    authorize @answer
+    @answer.destroy
+    redirect_to course_quizzes_path(@quiz.course), notice: "Sua resposta foi deletada com sucesso"
+  end
 end

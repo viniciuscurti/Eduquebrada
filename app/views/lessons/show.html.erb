@@ -87,7 +87,7 @@
           <div class="justify-content-between">
             <%= link_to "Editar aula", edit_lesson_path, class: "btn btn-primary" %>
             <% if policy(@lesson).destroy? %>
-              <%= link_to "Deletar aula", lesson_path(@lesson), method: :delete, class: "btn btn-primary" %>
+              <%= link_to "Deletar aula", lesson_path(@lesson), method: :delete, data: { confirm: 'Você tem certeza que deseja deletar?' }, class: "btn btn-primary" %>
             <% end %>
           </div>
         </div>

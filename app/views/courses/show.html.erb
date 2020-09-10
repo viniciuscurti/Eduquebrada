@@ -28,7 +28,7 @@
       <%= link_to "Criar prova", new_course_quiz_path(@course), class: "btn btn-primary" %>
       <%= link_to "Editar curso", edit_course_path, class: "btn btn-primary" %>
       <% if policy(@course).destroy? %>
-        <%= link_to "Apagar curso", course_path(@course), method: :delete, class: "btn btn-primary" %>
+        <%= link_to "Apagar curso", course_path(@course), method: :delete, data: { confirm: 'Você tem certeza que deseja deletar?' }, class: "btn btn-warning" %>
       <% end %>
     <% end %>
     <% if @enrollment.nil? && @course.user != current_user %>

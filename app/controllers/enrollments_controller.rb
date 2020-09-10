@@ -6,6 +6,7 @@ class EnrollmentsController < ApplicationController
     @enrollment.approved
     @total = @enrollment.total_answers
     @result = @enrollment.right_answers
+    @enrollment.answers.destroy_all
   end
 
   def new

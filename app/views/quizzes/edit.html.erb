@@ -1,24 +1,23 @@
-<h1 class="mt-4">Editar Questão</h1>
-
-<br>
-<div>
-  <div>
-    <% if policy(@quiz).edit? %>
-      <%= simple_form_for(@quiz) do |f| %>
-      <%= f.input :question %>
-      <%= f.input :answer_1 %>
-      <%= f.input :answer_2 %>
-      <%= f.input :answer_3 %>
-      <%= f.input :answer_4 %>
-      <%= f.input :answer_5 %>
-      <%= f.submit 'Atualizar', class: 'btn-primary' %>
-      <% end %>
-    <% end %>
+<div class="container mt-5">
+  <div class="d-flex justify-content-start">
+    <h1 class="pt-5">Editar Questão</h1>
   </div>
 
   <br>
 
   <div>
-    <%= link_to "Voltar para Teste", course_quizzes_path(@quiz.course), class: "btn btn-primary" %>
+    <% if policy(@quiz).edit? %>
+      <%= simple_form_for(@quiz) do |f| %>
+      <%= f.input :question, label: "Questão:" %>
+      <%= f.input :answer_1, label: "Resposta 1:", placeholder: "Coloque aqui a resposta correta" %>
+      <%= f.input :answer_2, label: "Resposta 2:" %>
+      <%= f.input :answer_3, label: "Resposta 3:" %>
+      <%= f.input :answer_4, label: "Resposta 4:" %>
+      <%= f.input :answer_5, label: "Resposta 5:" %>
+      <%= f.submit 'Atualizar', class: 'btn btn-primary' %>
+      <%= link_to "Voltar para Teste", course_quizzes_path(@quiz.course), class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
   </div>
+
 </div>
