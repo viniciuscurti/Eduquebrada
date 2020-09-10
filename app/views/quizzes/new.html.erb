@@ -2,17 +2,17 @@
   <div class="d-flex justify-content-start">
     <h1 class="pt-5">Criar Questão</h1>
   </div>
-  
+
   <br>
 
   <div class="mb-3">
     <%= simple_form_for [@course, @quiz] do |f| %>
-      <%= f.input :question %>
-      <%= f.input :answer_1 %>
-      <%= f.input :answer_2 %>
-      <%= f.input :answer_3 %>
-      <%= f.input :answer_4 %>
-      <%= f.input :answer_5 %>
+      <%= f.input :question, label: "Questão:" %>
+      <%= f.input :answer_1, label: "Resposta 1:", placeholder: "Coloque aqui a resposta correta" %>
+      <%= f.input :answer_2, label: "Resposta 2:" %>
+      <%= f.input :answer_3, label: "Resposta 3:" %>
+      <%= f.input :answer_4, label: "Resposta 4:" %>
+      <%= f.input :answer_5, label: "Resposta 5:" %>
       <%= f.submit 'Criar', class: 'btn btn-primary' %>
       <%= link_to "Retorne para o curso", course_path(@course), class: "btn btn-secondary" %>
     <% end %>
