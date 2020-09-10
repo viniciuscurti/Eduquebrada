@@ -23,6 +23,24 @@ p{
   box-shadow: 3px 3px 3px 3px grey;
   height: 520px;
 }
+
+.conteudo{
+  h3{
+    margin-top: 121px;
+    margin-left: -26px;
+    margin-bottom: 10px;
+    font-size: 36px;
+    color:#0353A4;
+  }
+  h4{
+    margin-left: -26px;
+    width: 317px;
+    text-align: justify;
+    text-align: left;
+    font-size: 26px;
+    color:#33415C;
+  }
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
