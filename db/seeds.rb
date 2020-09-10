@@ -252,84 +252,166 @@ user.save!
   course.save!
 
   Lesson.new(
-    name: Faker::Educator.subject,
+    name: "Aula 1",
     chapter: 'Módulo Único',
-    url: "",
-    description: "",
+    url: "https://www.youtube.com/embed/9cZ7MBGh1fU",
+    description: "GABARITE LINGUAGENS NO ENEM",
     course: course
   ).save!
 
   Lesson.new(
-    name: Faker::Educator.subject,
+    name: "Aula 2",
     chapter: 'Módulo Único',
-    url: "",
-    description: "",
+    url: "https://www.youtube.com/embed/s6L2a1X_9a4",
+    description: "COMPETÊNCIA 1 DA PROVA DE LINGUAGENS",
     course: course
   ).save!
 
   Lesson.new(
-    name: Faker::Educator.subject,
+    name: "Aula 3",
     chapter: 'Módulo Único',
-    url: "",
-    description: "",
+    url: "https://www.youtube.com/embed/eN9nxNpAdhI",
+    description: "COMPETÊNCIA 3 DA PROVA DE LINGUAGENS",
     course: course
   ).save!
 
   Lesson.new(
-    name: Faker::Educator.subject,
+    name: "Aula 4",
     chapter: 'Módulo Único',
-    url: "",
-    description: "",
+    url: "https://www.youtube.com/embed/SQrJ8BIYU-w",
+    description: "COMPETÊNCIA 4 DA PROVA DE LINGUAGENS",
     course: course
   ).save!
 
   Lesson.new(
-    name: Faker::Educator.subject,
+    name: "Aula 5",
     chapter: 'Módulo Único',
-    url: "",
-    description: "",
+    url: "https://www.youtube.com/embed/KSkeCNwoCEk",
+    description: "COMPETÊNCIA 5 DA PROVA DE LINGUAGENS",
     course: course
   ).save!
 
   Lesson.new(
-    name: Faker::Educator.subject,
+    name: "Aula 6",
     chapter: 'Módulo Único',
-    url: "",
-    description: "",
+    url: "https://www.youtube.com/embed/4yIYPNLzInk",
+    description: "COMPETÊNCIA 6 DA PROVA DE LINGUAGENS",
     course: course
   ).save!
 
   Lesson.new(
-    name: Faker::Educator.subject,
+    name: "Aula 7",
     chapter: 'Módulo Único',
-    url: "",
-    description: "",
+    url: "https://www.youtube.com/embed/pLL8d89-C_0",
+    description: "COMPETÊNCIA 7 DA PROVA DE LINGUAGENS",
     course: course
   ).save!
 
   Lesson.new(
-    name: Faker::Educator.subject,
+    name: "Aula 8",
     chapter: 'Módulo Único',
-    url: "",
-    description: "",
+    url: "https://www.youtube.com/embed/r2lqyTtZI48",
+    description: "COMPETÊNCIA 8 DA PROVA DE LINGUAGENS",
     course: course
   ).save!
 
   Lesson.new(
-    name: Faker::Educator.subject,
+    name: "Aula 9",
     chapter: 'Módulo Único',
-    url: "",
-    description: "",
+    url: "https://www.youtube.com/embed/jz01sIyysu8",
+    description: "COMPETÊNCIA 9 DA PROVA DE LINGUAGENS",
     course: course
   ).save!
 
   Quiz.new(
-    question: "",
-    answer_1: "",
-    answer_2: "",
-    answer_3: "",
-    answer_4: "",
-    answer_5: "",
+    question: "'Há tempos que a leitura está em pauta. E, diz-se, em crise. Comenta-se esta crise, por exemplo, apontando a precariedade das práticas de leitura, lamentando a falta de familiaridade dos jovens com livros, reclamando da falta de bibliotecas em tantos municípios, do preço dos livros em livrarias, num nunca acabar de problemas e de carências. Mas, de um tempo para cá, pesquisas acadêmicas vêm dizendo que talvez não seja exatamente assim, que brasileiros leem, sim, só que leem livros que as pesquisas tradicionais não levam em conta. E, também de um tempo para cá, políticas educacionais têm tomado a peito investir em livros e em leitura. - Os falantes, nos textos que produzem, sejam orais ou escritos, posicionam-se frente a assuntos que geram consenso ou despertam polêmica. No texto, a autora:'",
+    answer_1: "questiona a existência de uma crise de leitura com base nos dados de pesquisas acadêmicas.",
+    answer_2: "atribui a crise da leitura à falta de incentivos e ao desinteresse dos jovens por livros de qualidade.",
+    answer_3: "ressalta a importância de os professores incentivarem os jovens às práticas de leitura.",
+    answer_4: "critica pesquisas tradicionais que atribuem a falta de leitura à precariedade de bibliotecas.",
+    answer_5: "rebate a ideia de que as políticas educacionais são eficazes no combate à crise de leitura.",
+    course: course
+    ).save!
+
+  Quiz.new(
+    question: "'(Enem/2017) Essas moças tinham o vezo de afirmar o contrário do que desejavam. Notei a singularidade quando principiaram a elogiar o meu paletó cor de macaco. Examinavam-no sérias, achavam o pano e os aviamentos de qualidade superior, o feitio admirável. Envaideci-me: nunca havia reparado em tais vantagens. Mas os gabas se prolongaram, trouxeram-me desconfiança. Percebi afinal que elas zombavam e não me susceptibilizei. Longe disso: achei curiosa aquela maneira de falar pelo avesso, diferente das grosserias a que me habituara. Em geral me diziam com franqueza que a roupa não me assentava no corpo, sobrava nos sovacos.' - Por meio de recursos linguísticos, os textos mobilizam estratégias para introduzir e retomar ideias, promovendo a progressão do tema. No fragmento transcrito, um novo aspecto do tema é introduzido pela expressão",
+    answer_1: "'Longe disso.'",
+    answer_2: "'Em geral'",
+    answer_3: "'a singularidade'",
+    answer_4: "'tais vantagens'",
+    answer_5: "'os gabos'",
+    course: course
+    ).save!
+  Quiz.new(
+    question: "'No caso do esporte, a mediação efetuada pela câmera de TV construiu uma nova modalidade de consumo: o esporte telespetáculo, realidade textual relativamente autônoma face à prática “real” do esporte, construída pela codificação e mediação dos eventos esportivos efetuados pelo enquadramento, edição das imagens e comentários, interpretando para o espectador o que ele está vendo. Esse fenômeno tende a valorizar a forma em relação ao conteúdo, e para tal faz uso privilegiado da linguagem audiovisual com ênfase na imagem cujas possibilidades são levadas cada vez mais adiante, em decorrência dos avanços tecnológicos. Por outro lado, a narração esportiva propõe uma concepção hegemônica de esporte: esporte é esforço máximo, busca da vitória, dinheiro... O preço que se paga por sua espetacularização é a fragmentação do fenômeno esportivo. A experiência global do ser-atleta é modificada: a sociabilização no confronto e a ludicidade não são vivências privilegiadas no enfoque das mídias, mas as eventuais manifestações de violência, em partidas de futebol, por exemplo, são exibidas e reexibidas em todo o mundo.' - A reflexão trazida pelo texto, que aborda o esporte telespetáculo, está fundamentada na",
+    answer_1: "distorção da experiência do ser-atleta para os espectadores.",
+    answer_2: "interpretação dos espectadores sobre o conteúdo transmitido.",
+    answer_3: "utilização de equipamentos audiovisuais de última geração.",
+    answer_4: "valorização de uma visão ampliada do esporte.",
+    answer_5: "equiparação entre a forma e o conteúdo.",
+    course: course
+    ).save!
+  Quiz.new(
+    question: "'Meu caro Sherlock Holmes, algo horrível aconteceu às três da manhã no Jardim Lauriston. Nosso homem que estava na vigia viu uma luz às duas da manhã saindo de uma casa vazia. Quando se aproximou, encontrou a porta aberta e, na sala da frente, o corpo de um cavalheiro bem vestido. Os cartões que estavam em seu bolso tinham o nome de Enoch J. Drebber, Cleveland, Ohio, EUA. Não houve assalto e nosso homem não conseguiu encontrar algo que indicasse como ele morreu. Não havia marcas de sangue, nem feridas nele. Não sabemos como ele entrou na casa vazia. Na verdade, todo assunto é um quebra-cabeça sem fim. Se puder vir até a casa seria ótimo, se não, eu lhe conto os detalhes e gostaria muito de saber sua opinião. Atenciosamente, Tobias Gregson.Meu caro Sherlock Holmes, algo horrível aconteceu às três da manhã no Jardim Lauriston. Nosso homem que estava na vigia viu uma luz às duas da manhã saindo de uma casa vazia. Quando se aproximou, encontrou a porta aberta e, na sala da frente, o corpo de um cavalheiro bem vestido. Os cartões que estavam em seu bolso tinham o nome de Enoch J. Drebber, Cleveland, Ohio, EUA. Não houve assalto e nosso homem não conseguiu encontrar algo que indicasse como ele morreu. Não havia marcas de sangue, nem feridas nele. Não sabemos como ele entrou na casa vazia. Na verdade, todo assunto é um quebra-cabeça sem fim. Se puder vir até a casa seria ótimo, se não, eu lhe conto os detalhes e gostaria muito de saber sua opinião. Atenciosamente, Tobias Gregson.' - Considerando o objetivo da carta de Tobias Gregson, a sequência de enunciados negativos presente nesse texto tem a função de",
+    answer_1: "refutar possíveis causas da morte do cavalheiro, auxiliando na investigação.",
+    answer_2: "restringir a investigação, deixando-a sob a responsabilidade do autor da carta.",
+    answer_3: "identificar o local da cena do crime, localizando-o no Jardim Lauriston.",
+    answer_4: "introduzir o destinatário da carta, caracterizando sua personalidade.",
+    answer_5: "apresentar o vigia, incluindo-o entre os suspeitos do assassinato.",
+    course: course
+    ).save!
+  Quiz.new(
+    question: "'A  rede é, virtual em que as comunidades auxiliam seus membros a aprender o que querem saber. Os dados não representam senão a matéria-prima de um processo intelectual e social vivo, altamente elaborado. Enfim, toda inteligência coletiva do mundo jamais dispensará a inteligência pessoal, o esforço individual e o tempo necessário para aprender, pesquisar, avaliar e integrar-se a diversas comunidades, sejam elas virtuais ou não. A rede jamais pensará em seu lugar, fique tranquilo.' - No contexto das novas tecnologias de informação e comunicação, a circulação de saberes depende da",
+    answer_1: "contribuição dos usuários.",
+    answer_2: "otimização do tempo.",
+    answer_3: "confiabilidade dos sites.",
+    answer_4: "quantidade de informação.",
+    answer_5: "colaboração de intelectuais.",
+    course: course
+    ).save!
+  Quiz.new(
+    question: "'Ela nasceu lesma, vivia no meio das lesmas, mas não estava satisfeita com sua condição. Não passamos de criaturas desprezadas, queixava-se. Só somos conhecidas por nossa lentidão. O rastro que deixaremos na História será tão desprezível quanto a gosma que marca nossa passagem pelos pavimentos. A esta frustração correspondia um sonho: a lesma queria ser como aquele parente distante, o escargot. O simples nome já a deixava fascinada: um termo francês, elegante, sofisticado, um termo que as pessoas pronunciavam com respeito e até com admiração. Mas, lembravam as outras lesmas, os escargots são comidos, enquanto nós pelo menos temos chance de sobreviver. Este argumento não convencia a insatisfeita lesma, ao contrário: preferiria exatamente terminar sua vida desta maneira, numa mesa de toalha adamascada, entre talheres de prata e cálices de cristal. Assim como o mar é o único túmulo digno de um almirante batavo, respondia, a travessa de porcelana é a única lápide digna dos meus sonhos.' - Incorporando o devaneio da personagem, o narrador compõe uma alegoria que representa o anseio de",
+    answer_1: "materializar expectativas de natureza utópica.",
+    answer_2: "rejeitar metas de superação de desafios.",
+    answer_3: "restaurar o estado de felicidade pregressa.",
+    answer_4: "rivalizar com indivíduos de condição privilegiada.",
+    answer_5: "valorizar as experiências hedonistas do presente.",
+    course: course
+    ).save!
+  Quiz.new(
+    question: "'Antes de Roma ser fundada, as colinas de Alba eram ocupadas por  tribos latinas,  que dividiam o ano de acordo com seus deuses. Os romanos adaptaram essa estrutura. No princípio dessa civilização o ano tinha dez meses e começava por Martius (atual março). Os outros dois teriam sido acrescentados por Numa Pompílio, o segundo rei de Roma. Até Júlio César reformar o calendário local, os meses eram lunares, mas as festas em homenagem aos deuses permaneciam designadas pelas estações. O descompasso de dez dias por ano fazia com que, em todos os triênios, um décimo terceiro mês, o Intercalaris, tivesse que ser enxertado. Com a ajuda de matemáticos do Egito emprestados por Cleópatra, Júlio César acabou com a bagunça ao estabelecer o seguinte calendário solar: Januarius, Februarius, Martius, Aprilis, Maius, Junius, Quinctilis, Sextilis, September, October, November e December. Quase igual ao nosso, com as diferenças de que Quinctilis e Sextilis deram origem aos meses de julho e agosto.' - Considerando as informações no texto e  aspectos históricos da formação da língua,   a atual escrita dos meses do ano em português",
+    answer_1: "reflete a origem latina de nossa língua.",
+    answer_2: "decorre de uma língua falada no Egito antigo.",
+    answer_3: "tem como base um calendário criado por Cleópatra.",
+    answer_4: "segue a reformulação da norma da língua proposta por Júlio César.",
+    answer_5: "resulta da padronização do calendário antes da fundação de Roma.",
+    course: course
+    ).save!
+  Quiz.new(
+    question: "'Na semana passada, os alunos do colégio do meu filho se mobilizaram, através do Twitter,  para não comprarem na cantina da escola naquele dia, pois acharam o preço do pão de queijo abusivo. São adolescentes. Quase senhores das novas tecnologias, transitam nas redes sociais, varrem o mundo através dos teclados dos celulares, iPads e se organizam para fazer um movimento pacífico de não comprar lanches por um dia. Foi parar na TV e em muitas páginas da internet.' - O texto aborda a temática das tecnologias da informação e comunicação, especificamente o uso de redes sociais. Muito se debate acerca dos benefícios e malefícios do uso desses recursos e, nesse sentido, o texto",
+    answer_1: "trata as redes sociais como modo de agregar e empoderar grupos de pessoas, que se unem em prol de causas próprias ou de mudanças sociais.",
+    answer_2: "aborda a discriminação que as redes sociais sofrem de outros meios de comunicação.",
+    answer_3: "mostra que as reivindicações feitas nas redes sociais não têm impacto fora da internet.",
+    answer_4: "expõe a possibilidade de as redes sociais favorecerem comportamentos e manifestações violentos dos adolescentes que nelas se relacionam.",
+    answer_5: "evidencia que as redes sociais são usadas inadequadamente pelos adolescentes, que, imaturos, não utilizam a ferramenta como forma de mudança social.",
+    course: course
+    ).save!
+  Quiz.new(
+    question: "'O projeto DataViva consiste na oferta de dados oficiais sobre exportações, atividades econômicas, localidades e ocupações profissionais de todo o Brasil. Num primeiro momento, o DataViva construiu uma ferramenta que permitia a análise da economia mineira embasada por essa perspectiva metodológica complexa e diversa. No entanto, diante das possibilidades oferecidas pelas bases de dados trabalhadas, a plataforma evoluiu para um sistema mais completo. De maneira interativa e didática, o usuário é guiado por meio das diversas formas de navegação dos aplicativos. Além de informações sobre os produtos exportados, bem como acerca do volume das exportações em cada um dos estados e municípios do País, em poucos cliques, o interessado pode conhecer melhor o perfil da população, o tipo de atividade desenvolvida, as ocupações formais e a média salarial por categoria.' - Entre  as novas  possibilidades  promovidas  pelo  desenvolvimento  de novas  tecnologias, o texto destaca a",
+    answer_1: "obtenção de informações estratégicas.",
+    answer_2: "auditoria das ações de governo.",
+    answer_3: "publicidade das entidades públicas.",
+    answer_4: "disponibilidade de ambientes coletivos.",
+    answer_5: "comunicação entre órgãos administrativos.",
+    course: course
+    ).save!
+  Quiz.new(
+    question: "'A educação para a saúde deverá ser alcançada mediante interação de ações que possam envolver o próprio homem mediante suas atitudes frente às exigências ambientais representadas pelos hábitos alimentares, estado de estresse, opções de lazer,  atividade física, agressões climáticas etc. Dessa forma, parece evidente que o estado     de ser saudável não é algo estático. Pelo contrário, torna-se necessário adquiri-lo e construí-lo de forma individualizada constantemente ao longo de toda a vida, apontando para o fato de que saúde é educável e, portanto, deve ser tratada não apenas com base em referenciais de natureza biológica e higienista, mas sobretudo em um contexto didático-pedagógico.' - A educação para a saúde pressupõe a adoção de comportamentos com base na interação de fatores relacionados à",
+    answer_1: "constituição de hábitos saudáveis.",
+    answer_2: "adesão a programas de lazer.",
+    answer_3: "opção por dietas balanceadas.",
+    answer_4: "evasão de ambientes estressores.",
+    answer_5: "realização de atividades físicas regulares.",
     course: course
     ).save!
 end
