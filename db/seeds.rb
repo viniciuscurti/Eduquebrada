@@ -11,6 +11,8 @@ Lesson.destroy_all
 Course.destroy_all
 User.destroy_all
 Quiz.destroy_all
+Enrollment.destroy_all
+Answer.destroy_all
 
 
 puts "Start"
@@ -25,7 +27,7 @@ user = User.new(
   email: "contato@uct-fetranspor.com.br",
   password: Faker::Internet.password(min_length: 8),
   cpf: Faker::IDNumber.brazilian_id,
-  phone: Faker::PhoneNumber.cell_phone,
+  phone: Faker::Number.number(digits: 10),
   occupation: "Instituição de ensino",
   teacher: true
 )
