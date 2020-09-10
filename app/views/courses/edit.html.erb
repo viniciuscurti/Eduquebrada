@@ -1,10 +1,8 @@
-<div class="container">
-  <div class="mt-4">
-    <div class="d-flex justify-content-start">
-      <h1>Relação de Cursos Disponíveis</h1>
-    </div>  
+<div class="container mt-5">
+  <div class="d-flex justify-content-start">
+    <h1 class="pt-5">Editar Informações do Curso</h1>
   </div>
-  
+    
   <br>
 
   <div>
@@ -15,15 +13,13 @@
         <%= f.input :description %>
         <%= f.input :url %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit 'Atualização', class: 'btn-primary' %>
+        <div class="mb-5">
+          <%= f.submit 'Atualização', class: 'btn btn-primary' %>
+          <%= link_to "Retornar ao curso", course_path(@course), class: "btn btn-secondary" %>
+        </div>  
+
       <% end %>
     <% end %>
-  </div>
-  
-  <br>
-  
-   <div>
-    <%= link_to "Retornar aos cursos", course_path(@course), class: "btn btn-primary" %>
   </div>
 
 </div>
