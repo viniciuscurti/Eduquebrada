@@ -13,6 +13,16 @@ p{
   margin-top: 10px;
 }
 
+.img-mid-banner{
+  position: relative;
+  margin-bottom: 150px;
+  justify-content: center;
+  justify-items: center;
+  margin-left: 66px;
+  margin-top: 110px;
+  box-shadow: 3px 3px 3px 3px grey;
+  height: 520px;
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
