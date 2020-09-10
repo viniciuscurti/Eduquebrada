@@ -42,7 +42,7 @@ course = Course.new(
   url: "https://www.youtube.com/embed/HEdNerolZSw",
   user: user
 )
-card.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+course.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 course.save!
 
 Lesson.new(
@@ -224,6 +224,9 @@ Quiz.new(
   answer_5: "N/A",
   course: course
 ).save!
+
+
+
 
 # 1.times do
 #   file = URI.open("")
