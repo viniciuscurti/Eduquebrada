@@ -7,13 +7,15 @@
 
   <div>
     <%= simple_form_for(@course) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :category %>
-      <%= f.input :description %>
+      <%= f.input :name, label: :Nome %>
+      <%= f.input :category, label: :Categoria %>
+      <%= f.input :description, label: :Descrição %>
       <%= f.input :url %>
       <%= f.input :photo, as: :file %>
-      <%= f.submit 'Criar', class: 'btn btn-primary' %>
-      <%= link_to "Retorne para os cursos", courses_path, class: "btn btn-primary" %>
+      <div class="mb-5">
+        <%= f.submit 'Criar', class: 'btn btn-primary' %>
+        <%= link_to "Retorne aos cursos", courses_path, class: "btn btn-secondary" %>
+      </div>
     <% end %>
   </div>
   

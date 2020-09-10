@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  # "construction" to: "pages#construction"
 
   resources :courses do
     resources :lessons, only: [:new, :create]

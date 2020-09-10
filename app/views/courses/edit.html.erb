@@ -13,8 +13,10 @@
         <%= f.input :description %>
         <%= f.input :url %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit 'Atualização', class: 'btn btn-primary' %>
-        <%= link_to "Retornar aos cursos", course_path(@course), class: "btn btn-primary" %>
+        <div class="mb-5">
+          <%= f.submit 'Atualização', class: 'btn btn-primary' %>
+          <%= link_to "Retornar ao curso", course_path(@course), class: "btn btn-secondary" %>
+        </div>  
       <% end %>
     <% end %>
   </div>

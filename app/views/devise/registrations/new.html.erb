@@ -9,12 +9,14 @@
       <div class="form-row">
         <div class="form-group col-md-5">
           <%= f.input :name,
+                      label: :Nome,
                       required: true,
                       autofocus: true %>
         </div>
         <div class="form-group ml-5 mb-2">
           <p>Você deseja ser um professor?</p>
-          <%= f.input :teacher %>
+          <%= f.input :teacher,
+                      label: :Professor %>
         </div>
       </div>
       <div class="form-row">  
@@ -31,14 +33,17 @@
         </div>
         <div class="form-group col-md-5">
           <%= f.input :cpf,
+                      label: :CPF,
                       required: true %>
         </div>
         <div class="form-group col-md-5">
           <%= f.input :occupation,
+                      label: :Ocupação,
                       required: true %>
         </div>
         <div class="form-group col-md-5">
           <%= f.input :email,
+                      label: :Email,
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
@@ -46,6 +51,7 @@
 
         <div class="form-group col-md-5">
           <%= f.input :phone,
+                      label: :Telefone,
                       required: true %>
         </div>
         <%= f.input :photo, as: :file %>
@@ -53,8 +59,8 @@
     </div>
 
     <div class="form-actions mb-3">
-      <%= f.button :submit, "Sign up",  class: 'btn-primary' %>
-      <%= render "devise/shared/links" %>
+      <%= f.button :submit, "Sign up",  class: 'btn btn-primary' %>
+      <%= link_to "Homepage", root_path, class: "btn btn-secondary" %>
     </div>
   <% end %>
 
