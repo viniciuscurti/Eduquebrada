@@ -17,7 +17,7 @@
   <% if @courses.present? %>
     <% @courses.each do |course| %>
         <div class="card-products col-5 mb-3">
-          <img src="https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg" />
+          <%= cl_image_tag course.photo.key, crop: :fill %>
           <div class="card-products-infos">
             <h2 class="border-bottom"><%= course.name %></h2>
             <p><strong>Categoria:</strong> <%= course.category %></p>

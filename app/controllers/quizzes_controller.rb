@@ -3,6 +3,7 @@ class QuizzesController < ApplicationController
   before_action :set_course, only: [:index, :new, :create, :answer]
 
   def index
+    redirect_to course_path(@course) if @course.enrollments.where(user: current_user).empty?
     @quizzes = policy_scope(Quiz).where(course: @course).order(created_at: :desc)
   end
 
@@ -41,9 +42,9 @@ class QuizzesController < ApplicationController
   # def quiz_correct
   #   answers = params.require(:quiz).require(:question) #Uma hash com todas as respostas {"19"=>"3", "18"=>"5"}
   #   answers.each do |quiz, value|
-  #     quiz_answer = Answer.new(quiz_id: quiz.to_sym, enrollment_id: )  
+  #     quiz_answer = Answer.new(quiz_id: quiz.to_sym, enrollment_id: )
   #     answer = "answer_#{value}".to_sym
-      
+
   #     if answer_1 == answer
   #       quiz_answer.correct = true
   #     end
