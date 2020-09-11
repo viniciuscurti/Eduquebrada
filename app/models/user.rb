@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 40 }
   validates :cpf, presence: true, uniqueness: true, length: { maximum: 11 }, numericality: { only_integer: true }
   validates :phone, presence: true, uniqueness: true, length: { maximum: 15 }, numericality: { only_integer: true }
-  validates :occupation, presence: true, length: { maximum: 20 }
+  validates :occupation, presence: true, length: { maximum: 50 }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

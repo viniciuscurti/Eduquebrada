@@ -3,6 +3,9 @@ class EnrollmentsController < ApplicationController
 
   def show
     @enrollment = Enrollment.find(params[:id])
+
+    redirect_to course_path(@enrollment.course) if @enrollment.answers.empty?
+
     @enrollment.approved
     @total = @enrollment.total_answers
     @result = @enrollment.right_answers
