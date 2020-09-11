@@ -55,8 +55,8 @@ class EnrollmentsController < ApplicationController
       pdf.move_down 20
       pdf.text "#{@enrollment.course.name}", size: 40, style: :bold, align: :center
 
-      pdf.move_down 30
-      pdf.text "Certificado", size: 24, align: :center, style: :bold
+      pdf.move_down 10
+      # pdf.text "Certificado", size: 24, align: :center, style: :bold
 
       pdf.move_down 40
       pdf.text "Certificamos que <b>#{@enrollment.user.name}</b>, concluiu com sucesso o curso de #{@enrollment.course.name}, ministrado por <b>#{@enrollment.course.user.name}</b>.", inline_format: true
