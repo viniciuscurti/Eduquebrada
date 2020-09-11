@@ -446,7 +446,7 @@ course.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 course.save!
 
 Lesson.new(
-  name: 'Edit in Place com Ruby on Rails',
+  name: 'Aula 1',
   chapter: 'Módulo Único',
   url: "https://www.youtube.com/embed/skX0QJwPmXs",
   description: 'Como editar informações de um model sem precisar sair da página utilizando o Modal do Bootstrap para exibir as informações.',
@@ -454,7 +454,7 @@ Lesson.new(
 ).save!
 
 Lesson.new(
-  name: "Deploy de App Ruby on Rais com ActionCable no Heroku",
+  name: "Aula 2",
   chapter: 'Módulo Único',
   url: "https://www.youtube.com/embed/9fYFjPlM5cI",
   description: 'Aprenda como colocar em produção no Heroku sua aplicação Ruby on Rails com ActionCable.',
@@ -462,7 +462,7 @@ Lesson.new(
 ).save!
 
 Lesson.new(
-  name: "Configure domínio com SSL gratuito para aplicação no Heroku com Cloudflare",
+  name: "Aula 3",
   chapter: 'Módulo Único',
   url: "https://www.youtube.com/embed/XJW1KB4QQCc",
   description: 'Configure um domínio para a sua aplicação hospedada no Heroku com SSL/HTTPS gratuito utilizando o Cloudflare',
@@ -470,7 +470,7 @@ Lesson.new(
 ).save!
 
 Lesson.new(
-  name: "ActionCable em uma aplicação Ruby on Rails",
+  name: "Aula 4",
   chapter: 'Módulo Único',
   url: "https://www.youtube.com/embed/WuCLHgcEnDA",
   description: 'Como implementar o ActionCable em uma aplicação Ruby on Rails para ter atualização em tempo real de dados sem que o usuário precise recarregar a página.',
@@ -478,7 +478,7 @@ Lesson.new(
 ).save!
 
 Lesson.new(
-  name: "Ruby on Rails com Devise - Adicionando novos campos",
+  name: "Aula 5",
   chapter: 'Módulo Único',
   url: "https://www.youtube.com/embed/Vj5BAmtBvVQ",
   description: 'Como adicionar novos campos ao seu model de User durante o login em uma aplicação Ruby on Rails utilizando o Devise.',
