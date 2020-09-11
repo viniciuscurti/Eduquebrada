@@ -418,4 +418,99 @@ Quiz.new(
   course: course
   ).save!
 
+# CURSO ROBERTÃO
+
+file = URI.open('https://media-exp1.licdn.com/dms/image/C4E03AQHBdE4pHFiVQw/profile-displayphoto-shrink_400_400/0?e=1605139200&v=beta&t=G5BTwzfeQAR6Ia7Flme8yatQi3n0L9IJRzgh7iw-Sl0')
+user = User.new(
+  name: "Roberto Barros",
+  email: "contato@uct-fetranspor.com.br",
+  password: Faker::Internet.password(min_length: 8),
+  cpf: Faker::IDNumber.brazilian_id,
+  phone: Faker::Number.number(digits: 10),
+  occupation: "Full Stack Web Developer",
+  teacher: true
+)
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.save!
+
+file = URI.open('https://becode.com.br/wp-content/uploads/2017/01/banner-ruby-on-rails.png')
+course = Course.new(
+  name: "Ruby on Rails - Curso Básico",
+  category: 'Tecnologia',
+  description: 'O curso visa ensinar aos alunos como construir aplicações usando o framework Ruby on Rails, mostrando detalhadamente os desafios iniciais enfrentados por quem está iniciando nesse mundo de desenvolvimento Web com Rails. Para tanto, mostraremos os conceitos básicos que precisamos para iniciar nossa jornada rumo ao entendimento do Ruby on Rails.',
+  url: "",
+  user: user
+)
+course.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+course.save!
+
+Lesson.new(
+  name: 'Edit in Place com Ruby on Rails',
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/skX0QJwPmXs",
+  description: 'Como editar informações de um model sem precisar sair da página utilizando o Modal do Bootstrap para exibir as informações.',
+  course: course
+).save!
+
+Lesson.new(
+  name: "Deploy de App Ruby on Rais com ActionCable no Heroku",
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/9fYFjPlM5cI",
+  description: 'Aprenda como colocar em produção no Heroku sua aplicação Ruby on Rails com ActionCable.',
+  course: course
+).save!
+
+Lesson.new(
+  name: "Configure domínio com SSL gratuito para aplicação no Heroku com Cloudflare",
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/XJW1KB4QQCc",
+  description: 'Configure um domínio para a sua aplicação hospedada no Heroku com SSL/HTTPS gratuito utilizando o Cloudflare',
+  course: course
+).save!
+
+Lesson.new(
+  name: "ActionCable em uma aplicação Ruby on Rails",
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/WuCLHgcEnDA",
+  description: 'Como implementar o ActionCable em uma aplicação Ruby on Rails para ter atualização em tempo real de dados sem que o usuário precise recarregar a página.',
+  course: course
+).save!
+
+Lesson.new(
+  name: "Ruby on Rails com Devise - Adicionando novos campos",
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/Vj5BAmtBvVQ",
+  description: 'Como adicionar novos campos ao seu model de User durante o login em uma aplicação Ruby on Rails utilizando o Devise.',
+  course: course
+).save!
+
+Quiz.new(
+  question: "",
+  answer_1: "",
+  answer_2: "",
+  answer_3: "",
+  answer_4: "",
+  answer_5: "",
+  course: course
+  ).save!
+Quiz.new(
+  question: "",
+  answer_1: "",
+  answer_2: "",
+  answer_3: "",
+  answer_4: "",
+  answer_5: "",
+  course: course
+  ).save!
+Quiz.new(
+  question: "",
+  answer_1: "",
+  answer_2: "",
+  answer_3: "",
+  answer_4: "",
+  answer_5: "",
+  course: course
+  ).save!
+
+
 puts 'Finish'
