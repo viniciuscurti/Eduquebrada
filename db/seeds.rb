@@ -117,35 +117,35 @@ Lesson.new(
   course: course
 ).save!
 
-Quiz.new(
-  question: "O modelo de desenvolvimento adotado desde a Revolução Industrial trouxe impactos significativos na qualidade de vida dos seres humanos. Desde então, o crescimento econômico tem ocorrido de forma desordenada, sem planejamento e à custa de níveis crescentes de poluição e degradação ambiental. A consciência crítica sobre o modo de vida e a interferência no meio ambiente devem ser repensados por meio da reflexão sobre as ações do homem. Considerando o tema educação ambiental, sociedade e ambiente, uma forma de desenvolver o pensamento crítico em relação ao meio ambiente é:",
-  answer_1: "analisando criticamente os direitos e deveres de cada cidadão, mobilizando a participação social e a representatividade do coletivo na busca da melhor qualidade de vida.",
-  answer_2: "se comprometendo com a educação ambiental, a fim de fortalecer os conceitos de cidadania sem comprometer o modo de vida daqueles que buscam o mundo capitalista.",
-  answer_3: "impondo a consciência crítica sobre o papel do homem na natureza.",
-  answer_4: "definindo ações em busca da sustentabilidade ambiental, que afeta negativamente o crescimento econômico da sociedade atual que tem suas bases em um sistema capitalista.",
-  answer_5: "N/A",
-  course: course
-).save!
+# Quiz.new(
+#   question: "O modelo de desenvolvimento adotado desde a Revolução Industrial trouxe impactos significativos na qualidade de vida dos seres humanos. Desde então, o crescimento econômico tem ocorrido de forma desordenada, sem planejamento e à custa de níveis crescentes de poluição e degradação ambiental. A consciência crítica sobre o modo de vida e a interferência no meio ambiente devem ser repensados por meio da reflexão sobre as ações do homem. Considerando o tema educação ambiental, sociedade e ambiente, uma forma de desenvolver o pensamento crítico em relação ao meio ambiente é:",
+#   answer_1: "analisando criticamente os direitos e deveres de cada cidadão, mobilizando a participação social e a representatividade do coletivo na busca da melhor qualidade de vida.",
+#   answer_2: "se comprometendo com a educação ambiental, a fim de fortalecer os conceitos de cidadania sem comprometer o modo de vida daqueles que buscam o mundo capitalista.",
+#   answer_3: "impondo a consciência crítica sobre o papel do homem na natureza.",
+#   answer_4: "definindo ações em busca da sustentabilidade ambiental, que afeta negativamente o crescimento econômico da sociedade atual que tem suas bases em um sistema capitalista.",
+#   answer_5: "N/A",
+#   course: course
+# ).save!
 
-Quiz.new(
-  question: "'A ___________________ é uma dimensão da educação, é atividade intencional da prática social, que deve imprimir ao desenvolvimento ___________________ um caráter social em sua relação com a natureza e com os outros seres humanos, visando potencializar essa atividade humana com a finalidade de torná-la plena de prática social e de ética ambiental.' Assinale a alternativa que completa corretamente as lacunas do texto:",
-  answer_1: "educação ambiental / individual",
-  answer_2: "sociologia / sustentável",
-  answer_3: "sustentabilidade / coletivo",
-  answer_4: "educação social / sustentável",
-  answer_5: "educação moral / tecnológico",
-  course: course
-).save!
+# Quiz.new(
+#   question: "'A ___________________ é uma dimensão da educação, é atividade intencional da prática social, que deve imprimir ao desenvolvimento ___________________ um caráter social em sua relação com a natureza e com os outros seres humanos, visando potencializar essa atividade humana com a finalidade de torná-la plena de prática social e de ética ambiental.' Assinale a alternativa que completa corretamente as lacunas do texto:",
+#   answer_1: "educação ambiental / individual",
+#   answer_2: "sociologia / sustentável",
+#   answer_3: "sustentabilidade / coletivo",
+#   answer_4: "educação social / sustentável",
+#   answer_5: "educação moral / tecnológico",
+#   course: course
+# ).save!
 
-Quiz.new(
-  question: "Assinale a alternativa que indica corretamente o nome que se dá à educação que é uma proposta de filosofia de vida que resgata valores éticos, estéticos, democráticos e humanistas. Parte de um princípio de respeito pela diversidade natural e cultural, que inclui a especificidade de classe, etnia e gênero:",
-  answer_1: "Educação Ambiental",
-  answer_2: "Educação Social",
-  answer_3: "Educação Étnico Racial",
-  answer_4: "Educação Fundamental",
-  answer_5: "Educação de Jovens e Adultos",
-  course: course
-).save!
+# Quiz.new(
+#   question: "Assinale a alternativa que indica corretamente o nome que se dá à educação que é uma proposta de filosofia de vida que resgata valores éticos, estéticos, democráticos e humanistas. Parte de um princípio de respeito pela diversidade natural e cultural, que inclui a especificidade de classe, etnia e gênero:",
+#   answer_1: "Educação Ambiental",
+#   answer_2: "Educação Social",
+#   answer_3: "Educação Étnico Racial",
+#   answer_4: "Educação Fundamental",
+#   answer_5: "Educação de Jovens e Adultos",
+#   course: course
+# ).save!
 
 Quiz.new(
   question: "Para a coleta seletiva de lixo, os resíduos orgânicos, de plástico, de papelão e de vidro, são, respectivamente, descartados, em cestos de cor:",
@@ -183,47 +183,48 @@ Quiz.new(
   answer_5: "investir na criação de novos mananciais, garantindo a curto e médio prazos, o fornecimento da água necessária à população.",
   course: course
 ).save!
-Quiz.new(
-  question: "Isabel Cristina de Moura Carvalho, no livro Educação Ambiental: a formação do sujeito ecológico (2008), sugere que para renovar a nossa visão de mundo, às vezes, é importante trocar as lentes, implicando em desnaturalizar os modos óbvios que tínhamos de ver as coisas. Isso é necessário, por exemplo, nas questões relativas ao meio ambiente. Propondo lançar novos olhares sobre a percepção de ambiente disseminada no conjunto da sociedade, a autora propõe uma visão socioambiental que consiste, em linhas gerais, numa visão:",
-  answer_1: "orientada por uma racionalidade complexa e interdisciplinar, pensando o ambiente como um campo de interações entre a cultura, a sociedade e a base física e biológica dos processos vitais.",
-  answer_2: "orientada por uma racionalidade complexa e interdisciplinar, pensando o ambiente como sinônimo de natureza intocada, mas que pode ser afetado pelas constantes ações antrópicas e por fenômenos naturais.",
-  answer_3: "que tende a considerar a natureza como o mundo de ordem biológica, pacificada, equilibrada, estável em suas interações ecossistêmicas, o qual segue vivendo como autônomo e independente da interação com o mundo cultural humano.",
-  answer_4: "que tende a considerar a natureza como o mundo de ordem biológica, o qual segue vivendo como autônomo e independente da interação com o mundo cultural humano, exceto no caso de populações ribeirinhas e indígenas.",
-  answer_5: "orientada por uma racionalidade complexa e interdisciplinar, pensando o ambiente como um campo de interações entre a cultura e a sociedade, desconsiderando- se a base física e biológica dos processos vitais.",
-  course: course
-).save!
 
-Quiz.new(
-  question: "No que concerne à Educação Ambiental e à Política Nacional de Educação Ambiental, analise:
+# Quiz.new(
+#   question: "Isabel Cristina de Moura Carvalho, no livro Educação Ambiental: a formação do sujeito ecológico (2008), sugere que para renovar a nossa visão de mundo, às vezes, é importante trocar as lentes, implicando em desnaturalizar os modos óbvios que tínhamos de ver as coisas. Isso é necessário, por exemplo, nas questões relativas ao meio ambiente. Propondo lançar novos olhares sobre a percepção de ambiente disseminada no conjunto da sociedade, a autora propõe uma visão socioambiental que consiste, em linhas gerais, numa visão:",
+#   answer_1: "orientada por uma racionalidade complexa e interdisciplinar, pensando o ambiente como um campo de interações entre a cultura, a sociedade e a base física e biológica dos processos vitais.",
+#   answer_2: "orientada por uma racionalidade complexa e interdisciplinar, pensando o ambiente como sinônimo de natureza intocada, mas que pode ser afetado pelas constantes ações antrópicas e por fenômenos naturais.",
+#   answer_3: "que tende a considerar a natureza como o mundo de ordem biológica, pacificada, equilibrada, estável em suas interações ecossistêmicas, o qual segue vivendo como autônomo e independente da interação com o mundo cultural humano.",
+#   answer_4: "que tende a considerar a natureza como o mundo de ordem biológica, o qual segue vivendo como autônomo e independente da interação com o mundo cultural humano, exceto no caso de populações ribeirinhas e indígenas.",
+#   answer_5: "orientada por uma racionalidade complexa e interdisciplinar, pensando o ambiente como um campo de interações entre a cultura e a sociedade, desconsiderando- se a base física e biológica dos processos vitais.",
+#   course: course
+# ).save!
 
-            I. A primeira deve ter como base o pensamento crítico e inovador, em qualquer tempo ou lugar, em seus modos formal, não formal e informal, promovendo a transformação e a construção da sociedade.
+# Quiz.new(
+#   question: "No que concerne à Educação Ambiental e à Política Nacional de Educação Ambiental, analise:
 
-            II. A primeira pode ser entendida como os processos por meio dos quais o indivíduo e a coletividade constroem valores sociais, conhecimentos, habilidades, atitudes e competências voltadas para a conservação do meio ambiente.
+#             I. A primeira deve ter como base o pensamento crítico e inovador, em qualquer tempo ou lugar, em seus modos formal, não formal e informal, promovendo a transformação e a construção da sociedade.
 
-            III. A primeira é um componente essencial e permanente da educação nacional, devendo estar presente de forma articulada e, segundo a Constituição Federal, restrita a todos os níveis e modalidades do processo educativo de caráter formal.
+#             II. A primeira pode ser entendida como os processos por meio dos quais o indivíduo e a coletividade constroem valores sociais, conhecimentos, habilidades, atitudes e competências voltadas para a conservação do meio ambiente.
 
-            IV. A segunda tem sua esfera de ação restrita aos órgãos e entidades integrantes do Sistema Nacional de Meio Ambiente e instituições educacionais públicas e privadas dos sistemas de ensino.
+#             III. A primeira é um componente essencial e permanente da educação nacional, devendo estar presente de forma articulada e, segundo a Constituição Federal, restrita a todos os níveis e modalidades do processo educativo de caráter formal.
 
-            V. A segunda é coordenada por um órgão gestor que define as diretrizes para sua implementação e articula, coordena e supervisiona os planos, programas e projetos na área de educação ambiental em âmbito nacional.
+#             IV. A segunda tem sua esfera de ação restrita aos órgãos e entidades integrantes do Sistema Nacional de Meio Ambiente e instituições educacionais públicas e privadas dos sistemas de ensino.
 
-            É correto o que consta APENAS em",
-  answer_1: "I, II e V.",
-  answer_2: "I, II e IV.",
-  answer_3: "I, IV e V.",
-  answer_4: "II, III, IV e V.",
-  answer_5: "III, IV e V.",
-  course: course
-).save!
+#             V. A segunda é coordenada por um órgão gestor que define as diretrizes para sua implementação e articula, coordena e supervisiona os planos, programas e projetos na área de educação ambiental em âmbito nacional.
 
-Quiz.new(
-  question: "Uma das práticas a ser adotada visando a efetiva conservação da natureza e o desenvolvimento sustentável é, sem dúvidas, a educação ambiental. Considerando os diferentes aspectos desse processo, assinale a alternativa incorreta.",
-  answer_1: "A participação coletiva corresponde a um dos objetivos fundamentais da educação ambiental na lei brasileira, sendo incentivada em detrimento da participação individual.",
-  answer_2: "A Lei Federal nº 9.795/99, que dispõe sobre a Política Nacional de Educação Ambiental, estipula que ela não seja uma prática instituída como disciplina específica no currículo de ensino.",
-  answer_3: "A interdisciplinaridade representa um princípio da educação ambiental não só no Brasil, como também no cenário internacional.",
-  answer_4: "A abordagem participativa integra as populações locais na conservação de um ambiente, sendo os insucessos encarados como parte do processo de aprendizagem.",
-  answer_5: "N/A",
-  course: course
-).save!
+#             É correto o que consta APENAS em",
+#   answer_1: "I, II e V.",
+#   answer_2: "I, II e IV.",
+#   answer_3: "I, IV e V.",
+#   answer_4: "II, III, IV e V.",
+#   answer_5: "III, IV e V.",
+#   course: course
+# ).save!
+
+# Quiz.new(
+#   question: "Uma das práticas a ser adotada visando a efetiva conservação da natureza e o desenvolvimento sustentável é, sem dúvidas, a educação ambiental. Considerando os diferentes aspectos desse processo, assinale a alternativa incorreta.",
+#   answer_1: "A participação coletiva corresponde a um dos objetivos fundamentais da educação ambiental na lei brasileira, sendo incentivada em detrimento da participação individual.",
+#   answer_2: "A Lei Federal nº 9.795/99, que dispõe sobre a Política Nacional de Educação Ambiental, estipula que ela não seja uma prática instituída como disciplina específica no currículo de ensino.",
+#   answer_3: "A interdisciplinaridade representa um princípio da educação ambiental não só no Brasil, como também no cenário internacional.",
+#   answer_4: "A abordagem participativa integra as populações locais na conservação de um ambiente, sendo os insucessos encarados como parte do processo de aprendizagem.",
+#   answer_5: "N/A",
+#   course: course
+# ).save!
 
 
 
@@ -417,5 +418,100 @@ Quiz.new(
   answer_5: "realização de atividades físicas regulares.",
   course: course
   ).save!
+
+# CURSO ROBERTÃO
+
+file = URI.open('https://media-exp1.licdn.com/dms/image/C4E03AQHBdE4pHFiVQw/profile-displayphoto-shrink_400_400/0?e=1605139200&v=beta&t=G5BTwzfeQAR6Ia7Flme8yatQi3n0L9IJRzgh7iw-Sl0')
+user = User.new(
+  name: "Roberto Barros",
+  email: "roberto@rails.com.br",
+  password: Faker::Internet.password(min_length: 8),
+  cpf: Faker::IDNumber.brazilian_id,
+  phone: Faker::Number.number(digits: 10),
+  occupation: "Full Stack Web Developer",
+  teacher: true
+)
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user.save!
+
+file = URI.open('https://media-exp1.licdn.com/dms/image/C4E03AQHBdE4pHFiVQw/profile-displayphoto-shrink_400_400/0?e=1605139200&v=beta&t=G5BTwzfeQAR6Ia7Flme8yatQi3n0L9IJRzgh7iw-Sl0')
+course = Course.new(
+  name: "Ruby on Rails - Curso Básico",
+  category: 'Tecnologia',
+  description: 'O curso visa ensinar aos alunos como construir aplicações usando o framework Ruby on Rails, mostrando detalhadamente os desafios iniciais enfrentados por quem está iniciando nesse mundo de desenvolvimento Web com Rails. Para tanto, mostraremos os conceitos básicos que precisamos para iniciar nossa jornada rumo ao entendimento do Ruby on Rails.',
+  url: "https://www.youtube.com/embed/2SEKJdKzwNU",
+  user: user
+)
+course.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+course.save!
+
+Lesson.new(
+  name: 'Aula 1',
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/skX0QJwPmXs",
+  description: 'Como editar informações de um model sem precisar sair da página utilizando o Modal do Bootstrap para exibir as informações.',
+  course: course
+).save!
+
+Lesson.new(
+  name: "Aula 2",
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/9fYFjPlM5cI",
+  description: 'Aprenda como colocar em produção no Heroku sua aplicação Ruby on Rails com ActionCable.',
+  course: course
+).save!
+
+Lesson.new(
+  name: "Aula 3",
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/XJW1KB4QQCc",
+  description: 'Configure um domínio para a sua aplicação hospedada no Heroku com SSL/HTTPS gratuito utilizando o Cloudflare',
+  course: course
+).save!
+
+Lesson.new(
+  name: "Aula 4",
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/WuCLHgcEnDA",
+  description: 'Como implementar o ActionCable em uma aplicação Ruby on Rails para ter atualização em tempo real de dados sem que o usuário precise recarregar a página.',
+  course: course
+).save!
+
+Lesson.new(
+  name: "Aula 5",
+  chapter: 'Módulo Único',
+  url: "https://www.youtube.com/embed/Vj5BAmtBvVQ",
+  description: 'Como adicionar novos campos ao seu model de User durante o login em uma aplicação Ruby on Rails utilizando o Devise.',
+  course: course
+).save!
+
+Quiz.new(
+  question: "Qual dos seguintes métodos pode ser usado em Ruby para obter um número aleatório?",
+  answer_1: "rand",
+  answer_2: "Math.GetRandomNumber",
+  answer_3: "rnd",
+  answer_4: "$random",
+  answer_5: "n/a",
+  course: course
+  ).save!
+Quiz.new(
+  question: "A variável “dieta” é igual ao valor “comer menos” e você deseja imprimir em maiúsculas. Qual das opções a seguir você deve usar?",
+  answer_1: "puts dieta.upcase",
+  answer_2: "puts upcase(dieta)",
+  answer_3: "putsup dieta",
+  answer_4: "puts [a-z|A-Z] dieta",
+  answer_5: "n/a",
+  course: course
+  ).save!
+Quiz.new(
+  question: "Você precisa enviar um valor de volta ao código que o chamou (retornar um valor ao chamador). Qual método pode / deve ser usado para isso?",
+  answer_1: "return",
+  answer_2: "post",
+  answer_3: "relay",
+  answer_4: "send",
+  answer_5: "comeback",
+  course: course
+  ).save!
+
 
 puts 'Finish'
