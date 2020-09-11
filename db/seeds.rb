@@ -423,7 +423,7 @@ Quiz.new(
 file = URI.open('https://media-exp1.licdn.com/dms/image/C4E03AQHBdE4pHFiVQw/profile-displayphoto-shrink_400_400/0?e=1605139200&v=beta&t=G5BTwzfeQAR6Ia7Flme8yatQi3n0L9IJRzgh7iw-Sl0')
 user = User.new(
   name: "Roberto Barros",
-  email: "contato@uct-fetranspor.com.br",
+  email: "roberto@rails.com.br",
   password: Faker::Internet.password(min_length: 8),
   cpf: Faker::IDNumber.brazilian_id,
   phone: Faker::Number.number(digits: 10),
