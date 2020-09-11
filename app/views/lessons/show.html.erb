@@ -12,9 +12,9 @@
     <div class="lesson-description">
       <% if policy(@lesson).create? %>
         <h2 class="border-bottom"><%= @lesson.name %></h2>
-        <h4 class="border-bottom pt-2">Teacher:</h4>
+        <h4 class="border-bottom pt-2">Professor:</h4>
         <p><%= @lesson.course.user.name %></p>
-        <h4 class="border-bottom">Description</h4>
+        <h4 class="border-bottom">Descrição</h4>
         <p><%= @lesson.description %></p>
       <% end %>
     </div>
