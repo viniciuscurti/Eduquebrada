@@ -14,13 +14,13 @@ Rails.application.routes.draw do
   resources :lessons, only: [:show, :edit, :update, :destroy] do
     resources :comments, only: [:new, :create]
   end
-  resources :comments, only: [:show] do
+  resources :comments, only: [:show, :destroy] do
     resources :replies, only: [:new, :create]
   end
   resources :quizzes, only: [:edit, :update, :destroy]
   resources :answers, only: [:create, :destroy]
 
   get "downloadpdf/:id", to: "enrollments#submit", as: :downloadpdf
-  
+
 end
 

@@ -42,7 +42,10 @@
           <% @lesson.comments.each do |comment| %>
             <details>
               <summary class="border-bottom my-3 mx-3 d-flex align-items-center">
-                <span id="comment-<%= comment.id %>"><strong><%= comment.user.name %>:</strong> <%= comment.content %></span>
+                <p id="comment-<%= comment.id %>"><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+                <%= link_to comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
               </summary>
               <div id="replies">
                 <% if comment.replies.blank? %>
