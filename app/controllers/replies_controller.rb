@@ -12,6 +12,15 @@ class RepliesController < ApplicationController
     end
   end
 
+  def destroy
+    @reply = Reply.find(params[:id])
+    @comment = @reply.comment
+    authorize @comment
+    @reply.destroy
+
+    redirect_to lesson_path(@comment.lesson)
+  end
+
   private
 
   def reply_params

@@ -55,7 +55,11 @@
                   <% end %>
                 <% else %>
                   <% comment.replies.each do |reply| %>
-                    <p id="reply-<%= reply.id %>" class="border-bottom my-3 mx-3 d-flex align-items-center"><strong><%= reply.user.name %>: </strong> <%= reply.content %></p>
+                    <p id="reply-<%= reply.id %>" class="border-bottom my-3 mx-3 d-flex align-items-center"><strong><%= reply.user.name %>: </strong> <%= reply.content %>
+                      <%= link_to reply_path(reply), method: :delete do %>
+                        <i class="fas fa-trash"></i>
+                      <% end %>
+                    </p>
                   <% end %>
                   <%= simple_form_for([ comment, @reply ], remote: true) do |f| %>
                     <div class="justify-content-center">
